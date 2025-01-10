@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estudios Suramericano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        /* Estilos para el encabezado */
+header {
+    background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+    color: #f8f8f8; /* Blanco brillante para mayor claridad */
+    padding: 30px 0; /* Espaciado amplio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda para mayor impacto */
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa sutil */
+}
+
+/* Estilos para el título */
+header h1 {
+    font-size: 3rem; /* Tamaño de fuente destacado */
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-weight: 800; /* Negrita para mayor presencia */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaciado para dar un toque de distinción */
+    color: #ffcc33; /* Dorado suave para contraste con el azul */
+}
+/* Estilos para el subtítulo */
+header h3 {
+    font-size: 1.4rem; /* Tamaño de fuente del subtítulo */
+    font-style: italic; /* Estilo cursivo */
+    margin-top: 10px; /* Espaciado superior */
+    font-family: 'Lora', serif; /* Fuente serif para elegancia */
+    color: #d9d9d9; /* Gris claro para suavidad y armonía con el fondo */
+}
+/* Estilos para el logo */
+.logo {
+    max-width: 160px; /* Ajuste del tamaño de la imagen */
+    height: auto; /* Altura automática para mantener proporciones */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border-radius: 50%; /* Bordes redondeados */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil para darle un toque moderno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el logo */
+}
+/* Efecto hover para el logo */
+.logo:hover {
+    transform: scale(1.1); /* Aumento ligero en el tamaño al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda para dar un efecto de elevación */
+}
+        /* Estilos para las barras de navegación */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #004d99;
+            padding: 5px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; /* Espaciado ajustado */
+            font-size: 1rem; /* Tamaño de fuente reducido */
+            display: inline-block;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            margin: 0 5px; /* Margen reducido */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .nav-bar a:hover {
+            background: linear-gradient(135deg, #ffffff, #e6f2ff);
+            color: #003366;
+            border: 1px solid #003366;
+            transform: translateY(-2px); /* Desplazamiento ligero al hacer hover */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        /* Estilos para pantallas de hasta 768px (dispositivos móviles) */
+        @media (max-width: 768px) {
+        .nav-bar {
+            flex-direction: column; /* Cambia la dirección a columna para pantallas más pequeñas */
+            padding: 10px 0; /* Aumenta el padding para mejorar el área táctil */
+        }
+
+        .nav-bar a {
+            font-size: 0.9rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
+            padding: 12px 20px; /* Aumenta el espaciado para mejorar la usabilidad */
+            margin: 5px 0; /* Espacio vertical entre los enlaces */
+            width: 100%; /* Asegura que los enlaces ocupen el ancho completo */
+            text-align: center; /* Centra el texto en los enlaces */
+            }
+        }
+        /* Estilos para pantallas de hasta 480px (smartphones) */
+        @media (max-width: 480px) {
+        .nav-bar {
+            padding: 15px 0; /* Más espacio para facilitar la interacción táctil */
+            }
+        .nav-bar a {
+            font-size: 0.8rem; /* Reduce aún más el tamaño de fuente */
+            padding: 15px 25px; /* Aumenta el espaciado para mayor comodidad */
+            margin: 8px 0; /* Espacio vertical más amplio entre los enlaces */
+            }
+        }
+        /* Estilos del menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            background: rgba(0, 77, 153, 0.9);
+            min-width: 200px;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            border: 2px solid transparent; /* Borde por defecto */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            border: 0.8px solid #0056b3; /* Borde sólido azul en hover */
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 10px 12px; /* Espaciado ajustado para filas más delgadas */
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            font-size: 0.9rem; /* Tamaño de letra reducido */
+        }
+        /* Efecto hover en los enlaces del menú desplegable */
+        .dropdown-content a:hover {
+            background: rgba(255, 255, 255, 0.1); /* Fondo más sutil al pasar el mouse */
+            color: #FFD700; /* Cambiar el color a dorado */
+            transform: translateY(-1px); /* Desplazamiento ligero hacia arriba */
+        }
+        /* Submenú de universidades */
+        .university-menu {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            left: 100%; /* Despliegue hacia la derecha */
+            top: 0;
+            min-width: 250px; /* Ancho mínimo */
+            max-height: 80vh; /* Ajusta la altura máxima al 80% de la ventana */
+            background: #0056b3; /* Color de fondo */
+            border-radius: 8px; /* Bordes más redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+            opacity: 0; /* Comienza oculto */
+            transform: translateX(-20px); /* Desplazamiento inicial */
+            transition: opacity 0.4s ease, transform 0.4s ease; /* Transición más suave */
+            overflow-y: auto; /* Permite desplazamiento si el contenido es demasiado alto */
+            z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+        }
+        /* Mostrar el menú al hacer hover */
+        .dropdown-university:hover .university-menu {
+            display: block; /* Muestra el menú */
+            opacity: 1; /* Muestra completamente */
+            transform: translateX(0); /* Sin desplazamiento */
+        }
+        /* Estilos de los enlaces del submenú */
+        .dropdown-university .university-menu a {
+            color: #e0f0ff; /* Color de texto */
+            padding: 8px 12px; /* Espaciado ajustado para filas más delgadas */
+            text-decoration: none; /* Sin subrayado */
+            display: block; /* Cada enlace ocupa el bloque completo */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+            font-size: 0.9rem; /* Tamaño de letra reducido */
+        }
+        /* Efecto hover en los enlaces del submenú */
+        .dropdown-university .university-menu a:hover {
+            background: rgba(255, 255, 255, 0.1); /* Fondo más sutil al pasar el mouse */
+            color: #FFD700; /* Cambiar el color a dorado */
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Borde más sutil en hover */
+            transform: translateY(-2px); /* Desplazamiento ligero hacia arriba */
+        }
+        /* Agregar un efecto de separación entre los enlaces */
+        .dropdown-university .university-menu a:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria entre enlaces */
+        }
+        /* Opcional: Estilo para el submenú si hay un título */
+        .university-menu-title {
+            padding: 10px 12px; /* Espaciado */
+            font-weight: bold; /* Negrita */
+            background: rgba(255, 255, 255, 0.2); /* Fondo sutil */
+            border-top-left-radius: 8px; /* Bordes redondeados arriba */
+            border-top-right-radius: 8px; /* Bordes redondeados arriba */
+            font-size: 1rem; /* Tamaño de letra del título */
+        }
+        /* Estilo para los enlaces cuando el menú es pequeño */
+        .university-menu a {
+            line-height: 1.3; /* Altura de línea ajustada para filas más delgadas */
+        }
+        /* Pseudo-elemento para añadir un efecto visual extra en hover */
+        .nav-bar a::before {
+            content: ""; /* Genera un contenido vacío para el pseudo-elemento */
+            position: absolute; /* Posicionamiento absoluto dentro del enlace */
+            top: 0; /* Posición superior: 0 */
+            left: 0; /* Posición izquierda: 0 */
+            width: 100%; /* Ocupa el ancho completo del enlace */
+            height: 100%; /* Ocupa la altura completa del enlace */
+            background: rgba(255, 255, 255, 0.2); /* Color de fondo semitransparente (blanco con opacidad del 20%) */
+            z-index: -1; /* Coloca el pseudo-elemento detrás del contenido del enlace */
+            transition: transform 0.4s ease; /* Transición suave para el efecto de transformación */
+            transform: scaleX(0); /* Inicialmente el pseudo-elemento está colapsado horizontalmente (escala 0) */
+            transform-origin: right; /* El punto de origen de la transformación es el borde derecho */
+        }
+        /* Efecto en el pseudo-elemento al hacer hover sobre el enlace */
+        .nav-bar a:hover::before {
+            transform: scaleX(1); /* El pseudo-elemento se expande horizontalmente al 100% */
+            transform-origin: left; /* La expansión comienza desde el borde izquierdo */
+        }
+        .nav-bar img.logo-experience {
+            height: 60px; /* Ajusta la altura del logo aquí */
+            width: auto; /* Mantiene la relación de aspecto */
+            margin-right: 15px; /* Espaciado entre el logo y el texto */
+        }
+        .brand-name {
+            font-family: 'Germania One', sans-serif; /* Aplica Germania a la clase brand-name */
+            font-size: 2rem; /* Tamaño por defecto */
+            color: #ffffff;
+            text-align: center; /* Centra el texto */
+            font-weight: normal;
+            margin-right: 0;
+        }
+        /* Título de secciones */
+        .section-title {
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+            border-bottom: 2px solid transparent;
+            margin-bottom: 10px;
+            color: inherit; /* Asegura que el color inicial sea heredado */
+            position: relative; /* Para los efectos de sombra */
+        }
+        /* Colores por tipo de sección */
+        .section-title.pregrado {
+            color: #f35900 !important;
+        }
+        .section-title.posgrado {
+            color: #f3e521 !important;
+        }
+        .section-title.maestria {
+            color: #22ffcf !important;
+        }
+        /* Efecto al pasar el mouse sobre el título */
+        .section-title:hover {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            transform: translateY(-2px); /* Eleva el título ligeramente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de elevación */
+        }
+        .section-title i {
+            margin-right: 8px;
+        }
+        /* Estilos para la lista de programas */
+        .programs-list {
+            margin-left: 20px; /* Añade un margen para los elementos de la lista */
+        }
+        .programs-list ul {
+            list-style-type: none; /* Elimina los puntos de la lista */
+            padding-left: 0; /* Elimina el padding izquierdo del ul */
+        }
+        .programs-list li {
+            margin-bottom: 5px; /* Espaciado entre los elementos de la lista */
+        }
+        /* Estilo de enlaces en la lista de programas */
+        .programs-list a {
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            color: inherit; /* Asegura que los enlaces hereden el color */
+            padding: 5px 10px; /* Añade un padding para mejorar la zona de clic */
+            border-radius: 4px; /* Bordes redondeados para los enlaces */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transición para el fondo y color */
+        }
+        /* Efecto al pasar el mouse sobre los enlaces de la lista */
+        .programs-list a:hover {
+            color: #FFD700; /* Color del enlace al pasar el mouse */
+            background-color: rgba(255, 215, 0, 0.2); /* Fondo ligero al pasar el mouse */
+        }
+        /* Efecto al pasar el mouse sobre un elemento de la lista */
+        .programs-list li:hover {
+            transform: translateY(-1px); /* Eleva ligeramente el elemento al pasar el mouse */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave al pasar el mouse */
+        }
+        /* Media query para pantallas medianas (hasta 1200px) */
+        @media (max-width: 1200px) {
+        .brand-name {
+            font-size: 1.75rem; /* Tamaño de fuente ligeramente menor */
+            }
+        }
+        /* Media query para pantallas pequeñas (hasta 768px) */
+        @media (max-width: 768px) {
+        .brand-name {
+            font-size: 1.5rem; /* Tamaño de fuente aún menor para pantallas móviles */
+            }
+        }
+        /* Media query para pantallas muy pequeñas (hasta 480px) */
+        @media (max-width: 480px) {
+        .brand-name {
+            font-size: 1.2rem; /* Tamaño aún más pequeño en pantallas muy reducidas */
+            }
+        }
+        /* Estilos para las secciones */
+        .section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            opacity: 1; /* Se establece la opacidad a 1 para que sea visible */
+            transform: translateY(0); /* No hay desplazamiento, la sección se mantiene en su posición original */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #003366;
+        }
+        /* Estilos para el título de programas */
+        .programs-title {
+            font-size: 1.5rem;
+            color: #004d99;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            line-height: 1; /* Ajusta este valor según sea necesario */
+        }        
+        /* Menos espaciado en dispositivos moviles */
+        @media (max-width: 768px) {
+            .program-card {
+                padding: 10px; /* Menos espaciado en dispositivos móviles */
+            }
+        }
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        footer img {
+            max-width: 80px;
+            margin-top: 10px;
+        }
+        /* Estilos para la barra de redes sociales */
+        .social-media {
+            background-color: #004d99; /* Color de fondo de la barra */
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+            border-radius: 10px; /* Bordes redondeados en la barra */
+        }
+        /* Estilos para los enlaces de redes sociales */
+        .social-media a {
+            color: white;
+            font-size: 1.5rem; /* Tamaño de fuente para los iconos */
+            padding: 15px; /* Espacio alrededor de los iconos */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones para los efectos */
+            text-decoration: none; /* Eliminar subrayado */
+            display: inline-block; /* Asegura que el padding se aplique correctamente */
+            border-radius: 50%; /* Hace que el área de los íconos sea redonda */
+            background: linear-gradient(145deg, #0056a0, #003d7a); /* Fondo con gradiente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil por defecto */
+        }
+        /* Efecto al pasar el cursor sobre los iconos */
+        .social-media a:hover {
+            background: linear-gradient(145deg, #003d7a, #002f5d); /* Fondo con gradiente más oscuro al pasar el cursor */
+            color: #ffd700; /* Color dorado para el texto al pasar el cursor */
+            transform: scale(1.2); /* Aumenta el tamaño del ícono un poco menos */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada y redonda */
+        }         
+   
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f6f8;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1e3c72;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header nav {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        header nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        header nav a:hover {
+            color: #8ab6d6;
+        }
+        /* Tarjeta del programa */      
+.program-card {
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    transition: transform 0.3s ease;
+}
+.program-card:hover {
+    transform: translateY(-5px);
+}
+.program-card-content {
+    max-width: 60%; /* Mantener el contenido textual en un 60% */
+    margin-left: 20px; /* Espacio entre la imagen y el contenido */
+}
+.program-card h1 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+    color: #1e3c72;
+    font-weight: 600;
+}
+.program-card p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #555;
+}
+.program-card button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.program-card button:hover {
+    background-color: #1c75d1;
+}
+.program-card img {
+    width: 70%; /* La imagen ocupará el 70% del ancho disponible de la tarjeta */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-height: 300px; /* Aumenta la altura máxima para que sea más alta */
+    min-height: 220px; /* Asegura que la imagen no sea más pequeña que este tamaño */
+    object-fit: cover; /* Mantiene la proporción de la imagen y cubre el área sin distorsionar */
+    border-top: 2px solid #ddd; /* Borde superior */
+    border-radius: 15px; /* Bordes redondeados en la imagen */
+    margin-top: 10px;
+    margin-left: auto; /* Centra la imagen horizontalmente */
+    margin-right: auto; /* Centra la imagen horizontalmente */
+}
+#Descripcion {
+        background-color: #ffffff; /* Fondo blanco para la tarjeta */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+        margin-bottom: 30px;
+        transition: transform 0.3s, box-shadow 0.3s; /* Añade un efecto al pasar el mouse */
+    }
+
+    #Descripcion:hover {
+        transform: translateY(-5px); /* Levanta la tarjeta al pasar el mouse */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    }
+
+    #Descripcion h2 {
+        font-size: 28px;
+        color: #1e3c72; /* Color azul oscuro para el título */
+        margin-bottom: 15px;
+        font-weight: bold;
+        border-bottom: 2px solid #a8d8ea; /* Línea inferior azul claro */
+        padding-bottom: 10px;
+    }
+
+    #Descripcion p {
+        font-size: 17px;
+        color: #34495e; /* Color azul oscuro suave para el texto */
+        margin: 12px 0;
+        line-height: 1.6; /* Mejora la legibilidad */
+    }
+        /* Estilos para la sección de información adicional */
+        .programa-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        .programa-info .texto {
+            max-width: 60%;
+        }
+        .programa-info h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        .programa-info p {
+            color: #666;
+            line-height: 1.8;
+        }
+        .programa-info button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .tabs {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        .tablink {
+            background-color: #e3e8ef;
+            color: #555;
+            border: none;
+            padding: 12px 30px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .tablink:hover {
+            background-color: #1e90ff;
+            color: white;
+        }
+        .tablink.active {
+            background-color: #1e90ff;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .tabcontent h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        .tabcontent p {
+            color: #555;
+            line-height: 1.8;
+        }
+        /*Tabla de Informacion adicional*/
+       /* Estilos para la sección de información adicional */
+.tabcontent {
+    display: none; /* Cambia a block cuando quieras mostrar esta sección */
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Contenedor principal de la tarjeta */
+.info-table {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px auto; /* Centrar la tarjeta */
+    max-width: 600px; /* Ancho máximo de la tarjeta */
+}
+
+/* Estilo para el título */
+.info-table h2 {
+    font-size: 1.8em; /* Tamaño de la fuente */
+    margin-bottom: 0.5em; /* Espaciado inferior del título */
+    color: #1e3c72;
+    
+    /* Color azul oscuro */
+    text-align: center; /* Centrar el título */
+    font-weight: bold; /* Negrita para el título */
+    border-bottom: 2px solid #a8d8ea; /* Línea inferior azul claro */
+    padding-bottom: 10px; /* Espaciado interno debajo del título */
+}
+/* Estilo de las filas de la tabla */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0; /* Espaciado superior e inferior */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+}
+
+/* Sin borde inferior en la última fila */
+.info-row:last-child {
+    border-bottom: none; /* Eliminar borde inferior en la última fila */
+}
+
+/* Estilo para las etiquetas */
+.info-label {
+    font-weight: bold; /* Negrita para las etiquetas */
+    color: #34495e; /* Color azul oscuro para etiquetas */
+}
+
+/* Estilo para los valores */
+.info-value {
+    color: #2c3e50; /* Color azul oscuro para los valores */
+    text-align: right; /* Alinear a la derecha */
+}
+
+   /* Tabla de Requisitos */
+
+#Requisitos {
+    background-color: #f5f5f5; /* Fondo gris muy claro para un aspecto profesional */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Sombra más elegante y suave */
+    margin: 0 auto 30px; /* Centrado horizontal y margen inferior */
+    max-width: 800px; /* Ajusta el ancho máximo para centrar */
+}
+
+.yikes-custom-woo-tab-title {
+    font-size: 28px;
+    color: #1a1a1a; /* Color negro grisáceo */
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-bottom: 3px solid #a8d8ea; /* Línea inferior azul claro */
+    padding-bottom: 10px;
+    text-align: center; /* Centrado del título */
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #dcdcdc; /* Línea de separación gris suave */
+}
+
+.header-row {
+    background-color: #3a3a3a; /* Fondo gris oscuro para el encabezado */
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold;
+}
+
+.info-row span {
+    flex: 1;
+    text-align: left;
+}
+
+.info-obligatorio {
+    text-align: center;
+    font-weight: bold;
+    color: #3a3a3a; /* Gris Oscuro para "SI" */
+}
+
+.info-value {
+    color: #2b2b2b; /* Gris oscuro para el texto de los documentos */
+}
+
+/* Estilo para el texto introductorio */
+p {
+    font-size: 17px;
+    color: #3a3a3a; /* Color gris oscuro para el texto */
+    margin: 12px 0;
+    line-height: 1.6; /* Mejora la legibilidad */
+    text-align: justify; /* Justifica el texto de los párrafos */
+}
+
+.header-row .info-label,
+.header-row .info-obligatorio {
+    color: #ffffff; /* Blanco para "Documentos Requeridos" y "Obligatorio" */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Imagenes/logo.png" alt="logo" class="logo">
+        <div>
+            <h1>Centro de Estudios Suramericano</h1>
+            <h3>Consolidando el futuro académico</h3>
+        </div>
+    </header>
+    <div class="nav-bar">
+        <img src="Imagenes/logoexperienciablanco.png" alt="Logo Experiencia" class="logo-experience">
+        <span class="brand-name">Punto Experiencia Sibundoy</span>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>       
+        <div class="dropdown">
+            <a href="#programas-academicos"><i class="fas fa-graduation-cap"></i> Programas Académicos</a>
+            <div class="dropdown-content">
+                <div class="dropdown-university">
+                    <a href="#" class="university-title">Fundación Universitaria del Área Andina</a>
+                    <div class="university-menu" aria-labelledby="fundacion-menu">
+                        <a href="#fundacion-pregrado" class="section-title pregrado">
+                            <i class="fas fa-book"></i> Pregrado
+                        </a>
+                        <div class="programs-list">
+                            <a href="derechoandina.html">Derecho</a>
+                            <a href="administracionpublicaandina.html">Administración Pública</a>
+                            <a href="comunicacionsocialandina.html">Comunicación Social</a>
+                            <a href="administracionandina.html">Administración de Empresas</a>
+                            <a href="finanzasynegociosandina.html">Finanzas y Negocios Internacionales</a>
+                            <a href="licenciaturasocialesandina.html">Licenciatura en Ciencias Sociales</a>
+                            <a href="marketingynegociosandina.html">Marketing de Negocios</a>
+                            <a href="economiaandina.html">Economía</a>
+                            <a href="licenciaturaeducacionandina.html">Licenciatura en Educación Infantil</a>
+                            <a href="ingindustrialandina.html">Ingeniería Industrial</a>
+                            <a href="ingsistemasandina.html">Ingeniería de Sistemas</a>
+                            <a href="psicologiaandina.html">Psicología</a>
+                        </div>
+            
+                        <a href="#fundacion-posgrado" class="section-title posgrado">
+                            <i class="fas fa-user-graduate"></i> Posgrado - Especializaciones
+                        </a>
+                        <div class="programs-list">
+                            <a href="espinformaticaandina.html">Informática para la Innovación Educativa</a>
+                            <a href="esppedagogiaandina.html">Pedagogía y Docencia</a>
+                            <a href="espdireccionandina.html">Dirección y Producción de Contenidos Audiovisuales</a>
+                            <a href="espderechosautorandina.html">Derechos de Autor, Propiedad Industrial y Nuevas Tecnologías</a>
+                            <a href="espinfanciaandina.html">Infancia, Adolescencia y Desarrollo Familiar</a>
+                            <a href="espgerenciafinandina.html">Gerencia Financiera</a>
+                            <a href="espaltagerenciaandina.html">Alta Gerencia</a>
+                            <a href="espgesambientalandina.html">Gestión Ambiental</a>
+                            <a href="espgerenciasstandina.html">Gerencia en Seguridad y Salud en el Trabajo</a>
+                            <a href="espauditoriaandina.html">Auditoría en Salud</a>
+                        </div>
+            
+                        <a href="#fundacion-maestrias" class="section-title maestria">
+                            <i class="fas fa-certificate"></i> Posgrado - Maestrías
+                        </a>
+                        <div class="programs-list">
+                            <a href="maestriagerenciaandina.html">Maestría en Gerencia de Mercadeo Digital</a>
+                            <a href="maestriainnovacionandina.html">Maestría en Innovación</a>
+                            <a href="maestriaepidemiologiaandina.html">Maestría en Epidemiología</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="dropdown-university">
+                    <a href="#" class="university-title">Institución Universitaria Ceipa</a>
+                    <div class="university-menu" aria-labelledby="ceipa-menu">
+                        <a href="#ceipa-pregrado" class="section-title pregrado">
+                            <i class="fas fa-book"></i> Pregrado
+                        </a>
+                        <div class="programs-list">
+                            <a href="administracionfinancieraceipa.html">Administración Financiera</a>
+                            <a href="administracionempresasceipa.html">Administración de Empresas</a>
+                            <a href="contaduriapublicaceipa.html">Contaduría Pública</a>
+                            <a href="administracionmercadeoceipa.html">Administración en Mercadeo</a>
+                            <a href="administracionnegociosceipa.html">Administración en Negocios Internacionales</a>
+                            <a href="administracionhumanaceipa.html">Administración Humana</a>
+                        </div>
+                        
+                        <a href="#ceipa-posgrado" class="section-title posgrado">
+                            <i class="fas fa-user-graduate"></i> Posgrado - Especializaciones
+                        </a>
+                        <div class="programs-list">
+                            <a href="espgerenciaceipa.html">Especialización en Gerencia</a>
+                            <a href="espgerenciaproyectosceipa.html">Especialización en Gerencia de Proyectos</a>
+                            <a href="espgerenciamercadeoceipa.html">Especialización en Gerencia de Mercadeo</a>
+                            <a href="espgerenciafinancieraceipa.html">Especialización en Gerencia Financiera</a>
+                            <a href="espgerenciatalentohumanoceipa.html">Especialización en Gerencia del Talento Humano</a>
+                            <a href="espgerencialogisticaceipa.html">Especialización en Gerencia Logística</a>
+                            <a href="espgestionserviciosceipa.html">Especialización en Gestión de Servicios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <a href="#nosotros"><i class="fas fa-info-circle"></i> Nosotros</a>
+        <a href="#horarios"><i class="fas fa-clock"></i> Horarios</a>
+    </div>
+    <nav>
+        <a href="#">Inicio</a> /
+        <a href="#">Posgrado</a> /
+        <a href="#">Especialización</a> /
+        <a href="#">Informática para la Innovación Educativa</a>
+    </nav>
+</header>
+<!-- Tarjeta elegante para el programa -->
+<div class="program-card">
+    <div class="program-card-content">
+        <h1>Especialización en Informática para la Innovación Educativa</h1>
+        <p><strong>COP$ 3.730.000</strong></p>
+        <p>SNIES: 103206 – Res. No. 2098 del 25/02/2022 – 7 años</p>        
+        <p>Duracion del Programa: 2 Semestres</p>
+        <button>Inscríbete aquí</button>
+    </div>
+    <img src="Imagenes/ESP_Inform_Innovac_Educ.jpg" alt="Imagen del programa de Especialización en Informática para la Innovación Educativa">
+</div>
+
+<section class="programa-info">
+    <div class="texto">
+        <h2>¡Inscríbete ya!</h2>
+        <p>Únete a la Especialización en Informática para la Innovación Educativa y conviértete en un profesional capaz de integrar tecnologías innovadoras en entornos educativos. Desarrolla habilidades para impulsar la enseñanza y el aprendizaje en la era digital, y destaca en un campo que demanda soluciones creativas para transformar la educación.</p>
+        <button onclick="solicitarInformacion()">Solicitar información</button>
+    </div>
+    <div class="imagen">
+        <img src="Imagenes/logos_areandina.png" alt="Logo de la Universidad Areandina">
+    </div>
+</section>
+
+<section class="tabs">
+    <button class="tablink" onclick="openTab(event, 'Descripcion')" id="defaultOpen">Descripción</button>
+    <button class="tablink" onclick="openTab(event, 'InformacionAdicional')">Información adicional</button>
+    <button class="tablink" onclick="openTab(event, 'FichaTecnica')">Ficha Técnica</button>
+    <button class="tablink" onclick="openTab(event, 'Requisitos')">Requisitos de admisión</button>
+ 
+     
+</section>
+
+<section id="Descripcion" class="tabcontent">
+    <h2>Descripción</h2>
+    <p>En un mundo impulsado por el avance continuo de la información y el conocimiento, los valores, actitudes y estilos de vida evolucionan rápidamente, influenciados por la economía global y los cambios sociales. La Especialización en Informática para la Innovación Educativa responde a esta transformación, preparando profesionales capaces de integrar tecnologías innovadoras en la educación para fortalecer los procesos de enseñanza y aprendizaje. A través de un enfoque en habilidades tecnológicas y pedagógicas, esta especialización permite afrontar los retos de una sociedad en constante cambio, empoderando a las nuevas generaciones en su desarrollo en un contexto digital.</p>
+</section>
+<section id="InformacionAdicional" class="tabcontent">
+    <div class="info-table">
+        <h2>Información adicional</h2> <!-- Título dentro de la tarjeta -->
+        <div class="info-row">
+            <span class="info-label">Área de conocimiento:</span>
+            <span class="info-value">Educación</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Duración:</span>
+            <span class="info-value">2 Semestres</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Línea de financiación:</span>
+            <span class="info-value">Finky, ICETEX, Universidad</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Institución educativa:</span>
+            <span class="info-value">Area Andina</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Tipo de título:</span>
+            <span class="info-value">Universitario Colombia</span>
+        </div>
+    </div>
+</section>
+
+<section id="FichaTecnica" class="tabcontent">   
+    <h2 class="yikes-custom-woo-tab-title yikes-custom-woo-tab-title-ficha-tecnica">Ficha Técnica</h2>
+
+    <!-- Vista previa del PDF en un iframe -->
+    <iframe src="https://www.experiencia.co/wp-content/uploads/2022/10/exp_co-brochure-especializacion-informatica-innovacion-educativa-2022-areandina.pdf"
+            width="100%" height="600px" style="border: none;">
+        Tu navegador no soporta la vista previa de PDFs. 
+        <a href="https://www.experiencia.co/wp-content/uploads/2022/10/exp_co-brochure-especializacion-informatica-innovacion-educativa-2022-areandina.pdf" target="_blank">
+            Haz clic aquí para ver el documento.
+        </a>
+    </iframe>
+
+    <!-- Enlace de descarga del PDF con imagen -->
+    <p>
+        <a href="https://www.experiencia.co/wp-content/uploads/2022/10/exp_co-brochure-especializacion-informatica-innovacion-educativa-2022-areandina.pdf" 
+           target="_blank" rel="noopener" download>
+            <img decoding="async" class="alignright wp-image-5361 size-medium" 
+                 src="https://www.experiencia.co/wp-content/uploads/2022/04/FichaTecnica-300x81.jpg" 
+                 alt="Descargar Ficha Técnica" width="300" height="81">
+        </a>
+    </p>
+</section>
+
+<section id="Requisitos" class="tabcontent">
+    <h2 class="yikes-custom-woo-tab-title">Requisitos de admisión</h2>
+    <p>Estos son los documentos requeridos por la IES para el proceso de admisión.</p>
+    <p>Si usted es aspirante <strong>Regular</strong>, debe entregar los siguientes documentos:</p>
+
+    <div class="info-table">
+        <div class="info-row header-row">
+            <span class="info-label"><strong>Documentos Requeridos</strong></span>
+            <span class="info-obligatorio"><strong>Obligatorio</strong></span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Diploma de Grado de Pregrado</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Acta de Grado de Pregrado</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Certificados de Notas</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Certificado EPS o FOSYGA</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Pruebas Saber 11 – ICFES</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Acta Grado Bachiller</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Diploma Bachiller</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Foto para Carné Fondo Blanco 4×5</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+        <div class="info-row">
+            <span class="info-value">Documento de Identidad Ampliado 150%</span>
+            <span class="info-obligatorio">SI</span>
+        </div>
+    </div>
+</section>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>

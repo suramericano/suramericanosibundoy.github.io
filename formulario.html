@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-group {
+            flex: 1 1 calc(33.333% - 20px);
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group .radio-group, .form-group .checkbox-group {
+            display: flex;
+            gap: 20px;
+        }
+        .form-group .radio-group label, .form-group .checkbox-group label {
+            display: inline-block;
+            margin: 0;
+        }
+        .form-group .radio-group input, .form-group .checkbox-group input {
+            margin-right: 5px;
+        }
+        .form-actions {
+            text-align: center;
+        }
+        .form-actions button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Inscripción</h1>
+        <div class="form-container">
+            <form>
+                <!-- Información Personal -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tipoDocumento">Tipo de documento</label>
+                        <select id="tipoDocumento" name="tipoDocumento">
+                            <option value="150">Carnet Diplomático</option>
+                            <option value="141">Cédula de Ciudadanía</option>
+                            <option value="142">Cédula de Extranjería</option>
+                            <option value="148">Fideicomiso</option>
+                            <option value="143">Número de Identificación Tributaria</option>
+                            <option value="145">Pasaporte</option>
+                            <option value="149">Registro Civil</option>
+                            <option value="147">Sociedad Extranjera Sin NIT en Colombia</option>
+                            <option value="144">Tarjeta de Identidad</option>
+                            <option value="146">Tarjeta del Seguro Social Extranjero</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="identificacion">Identificación</label>
+                        <input type="text" id="identificacion" name="identificacion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaExpedicion">Fecha de expedición</label>
+                        <input type="date" id="fechaExpedicion" name="fechaExpedicion" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ciudadExpedicion">Ciudad de Expedición</label>
+                        <input type="text" id="ciudadExpedicion" name="ciudadExpedicion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nacionalidad">Nacionalidad</label>
+                        <input type="text" id="nacionalidad" name="nacionalidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="primerNombre">Primer nombre</label>
+                        <input type="text" id="primerNombre" name="primerNombre" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="segundoNombre">Segundo nombre</label>
+                        <input type="text" id="segundoNombre" name="segundoNombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="primerApellido">Primer apellido</label>
+                        <input type="text" id="primerApellido" name="primerApellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="segundoApellido">Segundo apellido</label>
+                        <input type="text" id="segundoApellido" name="segundoApellido">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Género</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+                            <label><input type="radio" name="genero" value="femenino" required> Femenino</label>
+                            <label><input type="radio" name="genero" value="otro" required> Otro</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoCivil">Estado civil</label>
+                        <select id="estadoCivil" name="estadoCivil">
+                            <option value="1">SOLTERO(A)</option>
+                            <option value="2">CASADO(A)</option>
+                            <option value="3">DIVORCIADO(A)</option>
+                            <option value="4">VIUDO(A)</option>
+                            <option value="5">UNIÓN LIBRE</option>
+                            <option value="7">SEPARADO(A)</option>
+                            <option value="8">CONVIVIENTE</option>
+                            <option value="9">CASADO CON SEPARACION DE BIENES</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="municipioNacimiento">Municipio de nacimiento</label>
+                        <input type="text" id="municipioNacimiento" name="municipioNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccionResidencia">Dirección de residencia</label>
+                        <input type="text" id="direccionResidencia" name="direccionResidencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="municipioResidencia">Municipio de residencia</label>
+                        <input type="text" id="municipioResidencia" name="municipioResidencia" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input type="tel" id="celular" name="celular" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correoElectronico">Correo electrónico</label>
+                        <input type="email" id="correoElectronico" name="correoElectronico" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="correoInstitucional">Correo institucional</label>
+                        <input type="email" id="correoInstitucional" name="correoInstitucional">
+                    </div>
+                    <div class="form-group">
+                        <label for="grupoEtnico">Grupo étnico</label>
+                        <select id="grupoEtnico" name="grupoEtnico">
+                            <option value="1">NO INFORMA</option>
+                            <option value="2">PUEBLO INDÍGENA</option>
+                            <option value="3">COMUNIDAD NEGRA</option>
+                            <option value="4">PUEBLO RROM</option>
+                            <option value="5">NO PERTENECE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="grupoEtnico">Grupo étnico</label>
+                        <select id="grupoEtnico" name="grupoEtnico">
+                            <option value="1">NO INFORMA</option>
+                            <option value="2">PUEBLO INDÍGENA</option>
+                            <option value="3">COMUNIDAD NEGRA</option>
+                            <option value="4">PUEBLO RROM</option>
+                            <option value="5">NO PERTENECE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="clase">Clase</label>
+                    <input type="text" id="clase" name="clase">
+                </div>
+            </div>
+                    <div class="form-group">
+                        <label for="tipoSangre">Tipo de sangre</label>
+                        <select id="tipoSangre" name="tipoSangre">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>¿Tiene discapacidad?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="discapacidad" value="si"> Sí</label>
+                            <label><input type="radio" name="discapacidad" value="no"> No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDiscapacidad">Tipo de discapacidad</label>
+                        <select id="tipoDiscapacidad" name="tipoDiscapacidad">
+                            <option value="1">NO APLICA</option>
+                            <option value="2">DISCAPACIDAD SENSORIAL - SORDERA PROFUNDA</option>
+                            <option value="3">DISCAPACIDAD SENSORIAL - HIPOACUSIA</option>
+                            <option value="4">DISCAPACIDAD SENSORIAL - CEGUERA</option>
+                            <option value="5">DISCAPACIDAD SENSORIAL - BAJA VISIÓN</option>
+                            <option value="6">DISCAPACIDAD SENSORIAL - SORDOCEGUERA</option>
+                            <option value="7">DISCAPACIDAD INTELECTUAL</option>
+                            <option value="8">DISCAPACIDAD PSICOSOCIAL</option>
+                            <option value="9">DISCAPACIDAD MÚLTIPLE</option>
+                            <option value="10">DISCAPACIDAD FISICA O MOTORA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zonaResidencia">Zona de residencia</label>
+                        <select id="zonaResidencia" name="zonaResidencia">
+                            <option value="urbano">URBANA</option>
+                            <option value="rural">RURAL</option>
+                        </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="estrato">Estrato</label>
+                        <select id="estrato" name="estrato">
+                            <option value="ESTRATO 0">ESTRATO 0</option>
+                            <option value="ESTRATO 1">ESTRATO 1</option>
+                            <option value="ESTRATO 2">ESTRATO 2</option>
+                            <option value="ESTRATO 3">ESTRATO 3</option>
+                            <option value="ESTRATO 4">ESTRATO 4</option>
+                            <option value="ESTRATO 5">ESTRATO 5</option>
+                            <option value="ESTRATO 6">ESTRATO 6</option>
+                        </select>
+                    </div>                   
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="medioEntero">¿Por cuál medio se enteró?</label>
+                        <select id="medioEntero" name="medioEntero">
+                            <option value="ALGUIEN LE CONTÓ">ALGUIEN LE CONTÓ</option>
+                            <option value="LE ENTREGARON UN VOLANTE">LE ENTREGARON UN VOLANTE</option>
+                            <option value="LO LLAMARON">LO LLAMARON</option>
+                            <option value="MEDIOS DE COMUNICACIÓN (RADIO, TV O PRENSA)">MEDIOS DE COMUNICACIÓN (RADIO, TV O PRENSA)</option>
+                            <option value="PASABA POR EL LOCAL">PASABA POR EL LOCAL</option>
+                            <option value="PLAN AMIGOS">PLAN AMIGOS</option>
+                            <option value="REDES SOCIALES O PAGINA WEB">REDES SOCIALES O PAGINA WEB</option>
+                            <option value="TRABAJA EN EXPERIENCIA">TRABAJA EN EXPERIENCIA</option>
+                            <option value="TALLER">TALLER</option>
+                            <option value="REFERIDO">REFERIDO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row"></div>
+                    <div class="form-group">
+                        <label for="grupoSanguineo">Grupo sanguíneo</label>
+                        <select id="grupoSanguineo" name="grupoSanguineo">
+                            <option value="a_positive">A+</option>
+                            <option value="a_negative">A-</option>
+                            <option value="b_positive">B+</option>
+                            <option value="b_negative">B-</option>
+                            <option value="ab_positive">AB+</option>
+                            <option value="ab_negative">AB-</option>
+                            <option value="o_positive">O+</option>
+                            <option value="o_negative">O-</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Nuevos Campos -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eps">Entidad Promotora de Salud</label>
+                        <input type="text" id="eps" name="eps">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombreAcudiente">Nombre del acudiente</label>
+                        <input type="text" id="nombreAcudiente" name="nombreAcudiente">
+                    </div>
+                    <div class="form-group">
+                        <label for="identificacionAcudiente">Identificación del acudiente</label>
+                        <input type="text" id="identificacionAcudiente" name="identificacionAcudiente">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAcudiente">Email del acudiente</label>
+                        <input type="email" id="emailAcudiente" name="emailAcudiente">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoAcudiente">Teléfono del acudiente</label>
+                        <input type="tel" id="telefonoAcudiente" name="telefonoAcudiente">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gradoActual">Grado Actual del Estudiante</label>
+                        <input type="text" id="gradoActual" name="gradoActual">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactoFamiliar">Datos de Contacto o Familiares</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentesco">Parentesco</label>
+                        <input type="text" id="parentesco" name="parentesco">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombresContacto">Nombres</label>
+                        <input type="text" id="nombresContacto" name="nombresContacto">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidosContacto">Apellidos</label>
+                        <input type="text" id="apellidosContacto" name="apellidosContacto">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoContacto">Teléfono</label>
+                        <input type="tel" id="telefonoContacto" name="telefonoContacto">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="programaAcademico">Programa Académico</label>
+                        <input type="text" id="programaAcademico" name="programaAcademico">
+                    </div>
+                    <div class="form-group">
+                        <label for="puntoExperiencia">Punto de experiencia</label>
+                        <input type="text" id="puntoExperiencia" name="puntoExperiencia">
+                    </div>
+                    <div class="form-group">
+                        <label for="periodoAcademico">Periodo Académico</label>
+                        <input type="text" id="periodoAcademico" name="periodoAcademico">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="asesorComercial">Asesor Comercial</label>
+                        <input type="text" id="asesorComercial" name="asesorComercial">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

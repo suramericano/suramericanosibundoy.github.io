@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Centro de Estudios Suramericano</title>
+    <!-- Importando Google Fonts para un diseño profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f7;
+            color: #333;
+        }
+
+        /* Estilo del Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background-color: #002B5B;
+            color: white;
+        }
+
+        header .logo {
+            width: 150px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header h3 {
+            font-size: 18px;
+            margin-top: 5px;
+            font-weight: 400;
+            color: #ffcc00;
+        }
+
+        /* Barra de Navegación */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #004080;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-bar a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .nav-bar a:hover {
+            background-color: #ffcc00;
+            color: #004080;
+        }
+
+        /* Sección Nosotros */
+        #nosotros {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+
+        #nosotros h2 {
+            font-size: 36px;
+            color: #004080;
+            border-bottom: 4px solid #ffcc00;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        #nosotros p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        /* Sección de Valores */
+        .valores {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .valores h3 {
+            font-size: 26px;
+            color: #004080;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .valor-card {
+            background-color: #f7f8fc;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 calc(50% - 20px);
+            display: flex;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .valor-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .valor-card i {
+            color: #004080;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .valor-card p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Estilo del pie de página */
+        footer {
+            text-align: center;
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos Responsivos */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+            }
+
+            .nav-bar a {
+                margin: 10px 0;
+            }
+
+            #nosotros {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            #nosotros h2 {
+                font-size: 28px;
+            }
+
+            #nosotros p, .valores li {
+                font-size: 16px;
+            }
+
+            .valor-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <img src="Imagenes/logo.png" alt="logo" class="logo">
+        <div>
+            <h1>Centro de Estudios Suramericano</h1>
+            <h3>Consolidando el futuro académico</h3>
+        </div>
+    </header>
+
+    <!-- Barra de Navegación -->
+    <nav class="nav-bar">
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="programas.html"><i class="fas fa-graduation-cap"></i> Programas Académicos</a>
+        <a href="nosotros.html"><i class="fas fa-info-circle"></i> Nosotros</a>
+        <a href="horarios.html"><i class="fas fa-clock"></i> Horarios</a>
+    </nav>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="nosotros-section">
+        <h2>Sobre Nosotros</h2>
+        <p>El <strong>Centro de Estudios Suramericano</strong> es una institución comprometida con la excelencia académica y el desarrollo integral de sus estudiantes. Con más de 20 años de experiencia, ofrecemos una amplia gama de programas académicos que van desde pregrados hasta maestrías y especializaciones, con el objetivo de formar profesionales competentes, capaces de enfrentar los retos del mundo moderno.</p>
+        <p>Nuestra misión es brindar una educación de calidad, con enfoque en la innovación y el liderazgo, preparando a nuestros estudiantes para ser agentes de cambio en sus comunidades y sectores profesionales.</p>
+        <p>Nuestra visión es convertirnos en un referente de educación superior en América Latina, reconocidos por nuestro compromiso con la investigación, la responsabilidad social y la excelencia académica.</p>
+
+        <div class="valores">
+            <h3>Nuestros Valores</h3>
+            <div class="valor-card">
+                <i class="fas fa-check"></i>
+                <p>Compromiso</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-check"></i>
+                <p>Innovación</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-check"></i>
+                <p>Responsabilidad Social</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-check"></i>
+                <p>Excelencia Académica</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-check"></i>
+                <p>Liderazgo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2024 Centro de Estudios Suramericano. Todos los derechos reservados. <a href="#">Política de Privacidad</a></p>
+    </footer>
+</body>
+</html>

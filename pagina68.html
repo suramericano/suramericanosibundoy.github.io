@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estudios Suramericano</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos CSS generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #004aad;
+            color: white;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .nav-bar {
+            background-color: #003580;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-bar a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-bar .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #004aad;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-university {
+            position: relative;
+        }
+
+        .university-menu {
+            display: none;
+            padding-left: 10px;
+        }
+
+        .dropdown-university:hover .university-menu {
+            display: block;
+        }
+
+        .program-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .search-section {
+            margin: 20px;
+        }
+
+        .search-btn {
+            background-color: #004aad;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #003580;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+            }
+
+            .program-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Imagenes/logo.png" alt="logo" class="logo">
+        <div>
+            <h1>Centro de Estudios Suramericano</h1>
+            <h3>Consolidando el futuro académico</h3>
+        </div>
+    </header>
+
+    <div class="nav-bar">
+        <img src="Imagenes/logoexperienciablanco.png" alt="Logo Experiencia" class="logo-experience">
+        <span class="brand-name">Punto Experiencia Sibundoy</span>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+        <div class="dropdown">
+            <a href="#programas-academicos"><i class="fas fa-graduation-cap"></i> Programas Académicos</a>
+            <div class="dropdown-content">
+                <div class="dropdown-university">
+                    <a href="#">Fundación Universitaria del Área Andina</a>
+                    <div class="university-menu">
+                        <a href="#fundacion-pregrado">Pregrado</a>
+                        <a href="#fundacion-posgrado">Posgrado - Especializaciones</a>
+                        <a href="#fundacion-maestrias">Posgrado - Maestrías</a>
+                    </div>
+                </div>
+                <div class="dropdown-university">
+                    <a href="#">Institución Universitaria Ceipa</a>
+                    <div class="university-menu">
+                        <a href="#">Pregrado</a>
+                        <a href="#">Posgrado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#nosotros"><i class="fas fa-info-circle"></i> Nosotros</a>
+        <a href="#horarios"><i class="fas fa-clock"></i> Horarios</a>
+    </div>
+
+    <div class="container">
+        <section class="section" id="inicio">
+            <h2>Bienvenido</h2>
+            <p>En el Centro de Estudios Suramericano, ofrecemos una amplia gama de programas académicos diseñados para preparar a los estudiantes para el éxito en el mundo moderno. Explore nuestras opciones y descubra cómo podemos ayudarle a alcanzar sus metas académicas y profesionales.</p>
+        </section>
+
+        <!-- Búsqueda de programas -->
+        <section class="section">
+            <div class="search-section">
+                <h2>Buscar Programa Académico</h2>
+                <form class="search-form" onsubmit="event.preventDefault(); buscarPrograma();">
+                    <div class="form-group">
+                        <label for="programa-nombre">Buscar por Nombre de Programa:</label>
+                        <input type="text" id="programa-nombre" placeholder="Ingrese el nombre del programa" class="input-text" onkeyup="buscarPrograma()">
+                    </div>
+                    <div class="form-group">
+                        <label for="universidad">Filtrar por Universidad:</label>
+                        <select id="universidad" class="select-universidad" onchange="buscarPrograma()">
+                            <option value="">Seleccione una universidad</option>
+                            <option value="area-andina">Fundación Universitaria del Área Andina</option>
+                            <option value="ceipa">Institución Universitaria Ceipa</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Buscar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section" id="programas">
+            <h2>Programas Académicos</h2>
+            <div class="program-list" id="lista-programas">
+                <!-- Aquí se mostrarán los programas filtrados -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Función para buscar programas académicos por nombre y universidad
+        const programas = [
+            { nombre: "Derecho", universidad: "area-andina", nivel: "Pregrado", costo: "COP$ 2.000.000" },
+            { nombre: "Administración Pública", universidad: "area-andina", nivel: "Pregrado", costo: "COP$ 2.100.000" },
+            { nombre: "Psicología", universidad: "ceipa", nivel: "Pregrado", costo: "COP$ 2.500.000" }
+            // Agregar más programas según sea necesario
+        ];
+
+        function buscarPrograma() {
+            const nombrePrograma = document.getElementById('programa-nombre').value.toLowerCase();
+            const universidad = document.getElementById('universidad').value;
+            const listaProgramas = document.getElementById('lista-programas');
+            
+            listaProgramas.innerHTML = '';
+
+            const programasFiltrados = programas.filter(programa => {
+                return (programa.nombre.toLowerCase().includes(nombrePrograma) || nombrePrograma === '') &&
+                       (programa.universidad === universidad || universidad === '');
+            });
+
+            if (programasFiltrados.length === 0) {
+                listaProgramas.innerHTML = '<p>No se encontraron programas.</p>';
+            } else {
+                programasFiltrados.forEach(programa => {
+                    const programCard = `
+                        <div class="program-card">
+                            <h3>${programa.nombre}</h3>
+                            <p>${programa.nivel} - ${programa.costo}</p>
+                            <a href="#">Más Información</a>
+                        </div>
+                    `;
+                    listaProgramas.innerHTML += programCard;
+                });
+            }
+        }
+    </script>
+</body>
+</html>

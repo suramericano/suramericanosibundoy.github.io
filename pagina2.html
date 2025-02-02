@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estudios Suramericano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header h3 {
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Estilos para las barras de navegación */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #004d99;
+            padding: 10px 0;
+            border-bottom: 2px solid #003366;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .nav-bar a:hover {
+            background-color: #003366;
+            border-radius: 5px;
+        }
+
+        /* Estilos para las secciones */
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Estilos para las tarjetas de programas */
+        .card-list {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            overflow-x: auto; /* Habilita la barra de desplazamiento horizontal */
+            max-width: 100%;
+            padding-bottom: 10px;
+            margin-bottom: -10px; /* Corrige el espacio inferior */
+        }
+
+        .card {
+            flex: 1 1 calc(30% - 20px);
+            max-width: calc(30% - 20px);
+            background-color: #cce5ff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            flex: 1;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .info-card {
+            padding: 20px;
+        }
+
+        .text-product {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #003366;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Estilos para los botones de redes sociales */
+        .social-media {
+            background-color: #007bff; /* Azul claro */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-button {
+            background-color: #ffffff; /* Fondo blanco para los botones */
+            color: #007bff; /* Color azul para los íconos */
+            font-size: 2rem; /* Tamaño grande del ícono */
+            padding: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-button:hover {
+            background-color: #0056b3; /* Azul oscuro en hover */
+            color: #ffffff; /* Color blanco para el ícono en hover */
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .info-img img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .map {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+         /* Diseño de Cuadricula CSS*/
+         .grid-container {
+             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+        }
+      
+        /* Estilos para los horarios */
+        .horario-txt {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .horario-txt .txt {
+            text-align: center;
+            flex: 1 1 auto;
+            margin: 10px;
+        }
+
+        .horario-txt h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .horario-txt p {
+            font-size: 1rem;
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+            }
+
+            .nav-bar a {
+                padding: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Imagenes/logo.png" alt="logo" class="logo">
+        <h1>Centro de Estudios Suramericano</h1>
+        <h3>Consolidando el futuro académico</h3>
+    </header>
+
+    <div class="nav-bar">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#programas">Programas Académicos</a>
+    </div>
+
+    <div class="container">
+        <section class="section" id="inicio">
+            <h2>Bienvenido</h2>
+            <p>En el Centro de Estudios Suramericano, ofrecemos una amplia gama de programas académicos diseñados para preparar a los estudiantes para el éxito en el mundo moderno. Explore nuestras opciones y descubra cómo podemos ayudarle a alcanzar sus metas académicas y profesionales.</p>
+        </section>
+
+        <section class="section" id="programas">
+            <h2>Programas Académicos</h2>
+            <div class="container">
+                <h1>Programas Académicos IBERO</h1>
+                
+                <div class="program-list">
+                    <!-- Card for each program -->
+                    <div class="program-card">
+                        <h3>Derecho</h3>
+                        <p>El Abogado de la IBERO es un profesional capaz de ejercer regional y localmente desde diferentes posiciones gerenciales, directivas o como litigante.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Psicología</h3>
+                        <p>El Psicólogo IBERO amplía sus posibilidades de actuación profesional ejerciendo en los campos: clínico, organizacional, educativo, jurídico y social comunitario.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Licenciatura en Educación Infantil</h3>
+                        <p>El Licenciado en Educación Infantil de la IBERO es un profesional docente destacado y experto que cuenta con las habilidades para comprender el desarrollo integral.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Licenciatura en Ciencias Sociales</h3>
+                        <p>El Licenciado en Ciencias Sociales de la IBERO es un profesional docente destacado y experto que contribuye a la formación para la vida, a través del componente de formación obligatoria y transversa.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Licenciatura en Matemáticas</h3>
+                        <p>Al generar propuestas pedagógicas y didácticas potenciarás el aprendizaje de forma integral, con capacidad para resolver problemas de índole disciplinar, pedagógico y didáctico en contextos de actuación.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Licenciatura en Educación Comunitaria</h3>
+                        <p>El Licenciado en Educación Comunitaria, IBERO es un profesional íntegro con un pensamiento sociocrítico que le permite comprender las características socioculturales de las comunidades para impulsar el empoderamiento.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <!-- Continue adding more program cards here -->
+                    <!-- ... -->
+                </div>
+        
+                <h2>Posgrados IBERO</h2>
+                <div class="program-list">
+                    <!-- Card for each postgraduate program -->
+                    <div class="program-card">
+                        <h3>Especialización en Desarrollo Integral de la Infancia y Adolescencia</h3>
+                        <p>La Especialización en Desarrollo Integral de la Infancia y Adolescencia es un programa de posgrado único con esta denominación en Colombia.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Especialización en Neuropsicología de la Educación</h3>
+                        <p>El Especialista en Neuropsicología de la Educación de la IBERO busca transformar la realidad escolar a través del estudio del cerebro y su relación con los procesos de aprendizaje en el aula.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <div class="program-card">
+                        <h3>Especialización en Gerencia de la Seguridad y Salud en el Trabajo</h3>
+                        <p>El Especialista en GSST evalúa la calidad de los programas de intervención y las estrategias de mejora de las condiciones de trabajo, verificando el uso de herramientas que favorecen el bienestar y la calidad de vida laboral.</p>
+                        <a href="#">Haz clic aquí</a>
+                    </div>
+        
+                    <!-- Continue adding more postgraduate program cards here -->
+                    <!-- ... -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section horario-info">
+            <h2>Horario de Atención</h2>
+            <div class="horario-txt">
+                <div class="txt">
+                    <h4>Lunes a Viernes</h4>
+                    <p>8:00 AM - 6:00 PM</p>
+                </div>
+                <div class="txt">
+                    <h4>Sábado</h4>
+                    <p>9:00 AM - 4:00 PM</p>
+                </div>
+                <div class="txt">
+                    <h4>Domingo</h4>
+                    <p>Cerrado</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-media">
+            <h2>¡Contactanos!</h2>
+            <div class="social-buttons">
+                <a href="mailto:suramericanoce@gmail.com" class="social-button">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.facebook.com/Centroestudiosuniversitariosuramericano?_rdr" target="_blank" class="social-button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" class="social-button">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                        <!-- Botón de WhatsApp -->
+                <a href="https://wa.me/573122863375" target="_blank" class="social-button">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Centro de Estudios Suramericano. Todos los derechos reservados.</p>
+        <p>Dirección: Barrio el cedro Cra 22 n 16-20 , Sibundoy, Colombia</p>
+        <div class="info-img">
+            <img src="Imagenes/logo.png" alt="logo">
+        </div>
+    </footer>
+</body>
+</html>
+<script src="scripts.js"></script>
+<script src="formulas.js"></script>
+

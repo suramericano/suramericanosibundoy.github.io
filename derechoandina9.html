@@ -1,0 +1,1151 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estudios Suramericano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        /* Estilos para el encabezado */
+header {
+    background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+    color: #f8f8f8; /* Blanco brillante para mayor claridad */
+    padding: 30px 0; /* Espaciado amplio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda para mayor impacto */
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa sutil */
+}
+
+/* Estilos para el título */
+header h1 {
+    font-size: 3rem; /* Tamaño de fuente destacado */
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-weight: 800; /* Negrita para mayor presencia */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaciado para dar un toque de distinción */
+    color: #ffcc33; /* Dorado suave para contraste con el azul */
+}
+
+/* Estilos para el subtítulo */
+header h3 {
+    font-size: 1.4rem; /* Tamaño de fuente del subtítulo */
+    font-style: italic; /* Estilo cursivo */
+    margin-top: 10px; /* Espaciado superior */
+    font-family: 'Lora', serif; /* Fuente serif para elegancia */
+    color: #d9d9d9; /* Gris claro para suavidad y armonía con el fondo */
+}
+
+/* Estilos para el logo */
+.logo {
+    max-width: 160px; /* Ajuste del tamaño de la imagen */
+    height: auto; /* Altura automática para mantener proporciones */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border-radius: 50%; /* Bordes redondeados */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil para darle un toque moderno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el logo */
+}
+
+/* Efecto hover para el logo */
+.logo:hover {
+    transform: scale(1.1); /* Aumento ligero en el tamaño al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda para dar un efecto de elevación */
+}
+
+
+        /* Estilos para las barras de navegación */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            background-color: #004d99;
+            padding: 5px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; /* Espaciado ajustado */
+            font-size: 1rem; /* Tamaño de fuente reducido */
+            display: inline-block;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            margin: 0 5px; /* Margen reducido */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .nav-bar a:hover {
+            background: linear-gradient(135deg, #ffffff, #e6f2ff);
+            color: #003366;
+            border: 1px solid #003366;
+            transform: translateY(-2px); /* Desplazamiento ligero al hacer hover */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        /* Estilos para pantallas de hasta 768px (dispositivos móviles) */
+        @media (max-width: 768px) {
+        .nav-bar {
+            flex-direction: column; /* Cambia la dirección a columna para pantallas más pequeñas */
+            padding: 10px 0; /* Aumenta el padding para mejorar el área táctil */
+        }
+
+        .nav-bar a {
+            font-size: 0.9rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
+            padding: 12px 20px; /* Aumenta el espaciado para mejorar la usabilidad */
+            margin: 5px 0; /* Espacio vertical entre los enlaces */
+            width: 100%; /* Asegura que los enlaces ocupen el ancho completo */
+            text-align: center; /* Centra el texto en los enlaces */
+            }
+        }
+
+        /* Estilos para pantallas de hasta 480px (smartphones) */
+        @media (max-width: 480px) {
+        .nav-bar {
+            padding: 15px 0; /* Más espacio para facilitar la interacción táctil */
+            }
+
+        .nav-bar a {
+            font-size: 0.8rem; /* Reduce aún más el tamaño de fuente */
+            padding: 15px 25px; /* Aumenta el espaciado para mayor comodidad */
+            margin: 8px 0; /* Espacio vertical más amplio entre los enlaces */
+            }
+        }
+        /* Estilos del menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            background: rgba(0, 77, 153, 0.9);
+            min-width: 200px;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            border: 2px solid transparent; /* Borde por defecto */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            border: 0.8px solid #0056b3; /* Borde sólido azul en hover */
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 10px 12px; /* Espaciado ajustado para filas más delgadas */
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            font-size: 0.9rem; /* Tamaño de letra reducido */
+        }
+        /* Efecto hover en los enlaces del menú desplegable */
+        .dropdown-content a:hover {
+            background: rgba(255, 255, 255, 0.1); /* Fondo más sutil al pasar el mouse */
+            color: #FFD700; /* Cambiar el color a dorado */
+            transform: translateY(-1px); /* Desplazamiento ligero hacia arriba */
+        }
+        /* Submenú de universidades */
+        .university-menu {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            left: 100%; /* Despliegue hacia la derecha */
+            top: 0;
+            min-width: 250px; /* Ancho mínimo */
+            max-height: 80vh; /* Ajusta la altura máxima al 80% de la ventana */
+            background: #0056b3; /* Color de fondo */
+            border-radius: 8px; /* Bordes más redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+            opacity: 0; /* Comienza oculto */
+            transform: translateX(-20px); /* Desplazamiento inicial */
+            transition: opacity 0.4s ease, transform 0.4s ease; /* Transición más suave */
+            overflow-y: auto; /* Permite desplazamiento si el contenido es demasiado alto */
+            z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+        }
+        /* Mostrar el menú al hacer hover */
+        .dropdown-university:hover .university-menu {
+            display: block; /* Muestra el menú */
+            opacity: 1; /* Muestra completamente */
+            transform: translateX(0); /* Sin desplazamiento */
+        }
+        /* Estilos de los enlaces del submenú */
+        .dropdown-university .university-menu a {
+            color: #e0f0ff; /* Color de texto */
+            padding: 8px 12px; /* Espaciado ajustado para filas más delgadas */
+            text-decoration: none; /* Sin subrayado */
+            display: block; /* Cada enlace ocupa el bloque completo */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+            font-size: 0.9rem; /* Tamaño de letra reducido */
+        }
+        /* Efecto hover en los enlaces del submenú */
+        .dropdown-university .university-menu a:hover {
+            background: rgba(255, 255, 255, 0.1); /* Fondo más sutil al pasar el mouse */
+            color: #FFD700; /* Cambiar el color a dorado */
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Borde más sutil en hover */
+            transform: translateY(-2px); /* Desplazamiento ligero hacia arriba */
+        }
+        /* Agregar un efecto de separación entre los enlaces */
+        .dropdown-university .university-menu a:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria entre enlaces */
+        }
+        /* Opcional: Estilo para el submenú si hay un título */
+        .university-menu-title {
+            padding: 10px 12px; /* Espaciado */
+            font-weight: bold; /* Negrita */
+            background: rgba(255, 255, 255, 0.2); /* Fondo sutil */
+            border-top-left-radius: 8px; /* Bordes redondeados arriba */
+            border-top-right-radius: 8px; /* Bordes redondeados arriba */
+            font-size: 1rem; /* Tamaño de letra del título */
+        }
+        /* Estilo para los enlaces cuando el menú es pequeño */
+        .university-menu a {
+            line-height: 1.3; /* Altura de línea ajustada para filas más delgadas */
+        }
+        /* Pseudo-elemento para añadir un efecto visual extra en hover */
+        .nav-bar a::before {
+            content: ""; /* Genera un contenido vacío para el pseudo-elemento */
+            position: absolute; /* Posicionamiento absoluto dentro del enlace */
+            top: 0; /* Posición superior: 0 */
+            left: 0; /* Posición izquierda: 0 */
+            width: 100%; /* Ocupa el ancho completo del enlace */
+            height: 100%; /* Ocupa la altura completa del enlace */
+            background: rgba(255, 255, 255, 0.2); /* Color de fondo semitransparente (blanco con opacidad del 20%) */
+            z-index: -1; /* Coloca el pseudo-elemento detrás del contenido del enlace */
+            transition: transform 0.4s ease; /* Transición suave para el efecto de transformación */
+            transform: scaleX(0); /* Inicialmente el pseudo-elemento está colapsado horizontalmente (escala 0) */
+            transform-origin: right; /* El punto de origen de la transformación es el borde derecho */
+        }
+        /* Efecto en el pseudo-elemento al hacer hover sobre el enlace */
+        .nav-bar a:hover::before {
+            transform: scaleX(1); /* El pseudo-elemento se expande horizontalmente al 100% */
+            transform-origin: left; /* La expansión comienza desde el borde izquierdo */
+        }
+        .nav-bar img.logo-experience {
+            height: 60px; /* Ajusta la altura del logo aquí */
+            width: auto; /* Mantiene la relación de aspecto */
+            margin-right: 15px; /* Espaciado entre el logo y el texto */
+        }
+        .brand-name {
+            font-family: 'Germania One', sans-serif; /* Aplica Germania a la clase brand-name */
+            font-size: 2rem; /* Tamaño por defecto */
+            color: #ffffff;
+            text-align: center; /* Centra el texto */
+            font-weight: normal;
+            margin-right: 0;
+        }
+        /* Título de secciones */
+        .section-title {
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+            border-bottom: 2px solid transparent;
+            margin-bottom: 10px;
+            color: inherit; /* Asegura que el color inicial sea heredado */
+            position: relative; /* Para los efectos de sombra */
+        }
+
+        /* Colores por tipo de sección */
+        .section-title.pregrado {
+            color: #f35900 !important;
+        }
+
+        .section-title.posgrado {
+            color: #f3e521 !important;
+        }
+
+        .section-title.maestria {
+            color: #22ffcf !important;
+        }
+
+        /* Efecto al pasar el mouse sobre el título */
+        .section-title:hover {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            transform: translateY(-2px); /* Eleva el título ligeramente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de elevación */
+        }
+
+        .section-title i {
+            margin-right: 8px;
+        }
+
+        /* Estilos para la lista de programas */
+        .programs-list {
+            margin-left: 20px; /* Añade un margen para los elementos de la lista */
+        }
+
+        .programs-list ul {
+            list-style-type: none; /* Elimina los puntos de la lista */
+            padding-left: 0; /* Elimina el padding izquierdo del ul */
+        }
+
+        .programs-list li {
+            margin-bottom: 5px; /* Espaciado entre los elementos de la lista */
+        }
+
+        /* Estilo de enlaces en la lista de programas */
+        .programs-list a {
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            color: inherit; /* Asegura que los enlaces hereden el color */
+            padding: 5px 10px; /* Añade un padding para mejorar la zona de clic */
+            border-radius: 4px; /* Bordes redondeados para los enlaces */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transición para el fondo y color */
+        }
+
+        /* Efecto al pasar el mouse sobre los enlaces de la lista */
+        .programs-list a:hover {
+            color: #FFD700; /* Color del enlace al pasar el mouse */
+            background-color: rgba(255, 215, 0, 0.2); /* Fondo ligero al pasar el mouse */
+        }
+
+        /* Efecto al pasar el mouse sobre un elemento de la lista */
+        .programs-list li:hover {
+            transform: translateY(-1px); /* Eleva ligeramente el elemento al pasar el mouse */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave al pasar el mouse */
+        }
+
+        /* Media query para pantallas medianas (hasta 1200px) */
+        @media (max-width: 1200px) {
+        .brand-name {
+            font-size: 1.75rem; /* Tamaño de fuente ligeramente menor */
+            }
+        }
+
+        /* Media query para pantallas pequeñas (hasta 768px) */
+        @media (max-width: 768px) {
+        .brand-name {
+            font-size: 1.5rem; /* Tamaño de fuente aún menor para pantallas móviles */
+            }
+        }
+
+        /* Media query para pantallas muy pequeñas (hasta 480px) */
+        @media (max-width: 480px) {
+        .brand-name {
+            font-size: 1.2rem; /* Tamaño aún más pequeño en pantallas muy reducidas */
+            }
+        }
+
+        /* Estilos para las secciones */
+        .section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            opacity: 1; /* Se establece la opacidad a 1 para que sea visible */
+            transform: translateY(0); /* No hay desplazamiento, la sección se mantiene en su posición original */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #003366;
+        }
+        /* Estilos para el título de programas */
+        .programs-title {
+            font-size: 1.5rem;
+            color: #004d99;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            line-height: 1; /* Ajusta este valor según sea necesario */
+        }
+        /* Estilos para las tarjetas de programas */
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; /* Espaciado entre las tarjetas */
+            padding: 20px; /* Espaciado interno del contenedor */
+        }
+
+        .program-card {
+            background: linear-gradient(135deg, #cce5ff, #e6f2ff);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border: 2px solid transparent; /* Borde transparente por defecto */
+        }
+        .program-card:hover {
+            transform: scale(1.05); /* Aumenta ligeramente el tamaño de la tarjeta */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+            border-color: #003366; /* Color del borde al pasar el mouse */
+        }
+        .program-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* Transición para la imagen */
+        }
+        .program-card:hover img {
+            transform: scale(1.1); /* Aumenta ligeramente el tamaño de la imagen */
+        }
+        .program-card h3 {
+            margin: 15px 0 10px;
+            font-size: clamp(1rem, 1.5vw, 1.2rem); /* Tamaño más refinado y flexible */
+            color: #003366;
+            text-align: center;
+            line-height: 1.3; /* Espaciado más pequeño para un look elegante */
+        }
+        .program-card p {
+            padding: 0 15px;
+            text-align: center;
+            font-size: clamp(0.85rem, 1.2vw, 1rem); /* Texto más pequeño y elegante */
+            color: #333;
+            line-height: 1.5; /* Mejora la legibilidad */
+        }
+        .program-card a {
+            margin-top: auto;
+            background-color: #0056a0; /* Color de fondo más oscuro para el botón */
+            color: white; /* Color de texto blanco */
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem); /* Botón más pequeño y elegante */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para el fondo y transformación */
+        }
+        .program-card a:hover {
+            background-color: #003d7a; /* Color de fondo más oscuro en hover */
+            transform: scale(1.05); /* Escala ligeramente el botón al pasar el cursor */
+        }
+        .program-area {
+            font-size: clamp(0.7rem, 1vw, 0.85rem); /* Tamaño más pequeño y elegante para texto secundario */
+            color: #007BFF; /* Color llamativo */
+            font-family: 'Arial', sans-serif; /* Fuente elegante */
+            margin-bottom: 0.5em; /* Espacio entre el texto y el nombre del programa */
+            text-transform: uppercase; /* Convertir a mayúsculas */
+            letter-spacing: 0.5px; /* Espaciado entre letras */
+        }
+        .small-text {
+            font-size: 15px !important; /* Ajusta el tamaño con prioridad */
+            color: #666 !important;     /* Ajusta el color con prioridad */
+        }
+
+
+        /* Menos espaciado en dispositivos moviles */
+        @media (max-width: 768px) {
+            .program-card {
+                padding: 10px; /* Menos espaciado en dispositivos móviles */
+            }
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        footer img {
+            max-width: 80px;
+            margin-top: 10px;
+        }
+        /* Estilos para la barra de redes sociales */
+        .social-media {
+            background-color: #004d99; /* Color de fondo de la barra */
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+            border-radius: 10px; /* Bordes redondeados en la barra */
+        }
+        /* Estilos para los enlaces de redes sociales */
+        .social-media a {
+            color: white;
+            font-size: 1.5rem; /* Tamaño de fuente para los iconos */
+            padding: 15px; /* Espacio alrededor de los iconos */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones para los efectos */
+            text-decoration: none; /* Eliminar subrayado */
+            display: inline-block; /* Asegura que el padding se aplique correctamente */
+            border-radius: 50%; /* Hace que el área de los íconos sea redonda */
+            background: linear-gradient(145deg, #0056a0, #003d7a); /* Fondo con gradiente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil por defecto */
+        }
+        /* Efecto al pasar el cursor sobre los iconos */
+        .social-media a:hover {
+            background: linear-gradient(145deg, #003d7a, #002f5d); /* Fondo con gradiente más oscuro al pasar el cursor */
+            color: #ffd700; /* Color dorado para el texto al pasar el cursor */
+            transform: scale(1.2); /* Aumenta el tamaño del ícono un poco menos */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada y redonda */
+        }
+        /* Estilos para el número de teléfono */
+        .telefono {
+            margin-top: 10px; /* Añade espacio superior */
+        }
+        .telefono a {
+            text-decoration: none; /* Eliminar subrayado del enlace */
+            color: white; /* Cambia el color del texto */
+            font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0; /* Espacio alrededor del número */
+            transition: color 0.5s ease; /* Transición para el cambio de color */
+        }
+        .phone-number {
+            margin-left: 5px; /* Añade espacio entre el icono y el número */
+            font-weight: bold; /* Poner el número en negrita */
+        }
+        .telefono a:hover {
+            color: #c8c500; /* Color cuando el cursor pasa encima */
+        }
+        /* Estilos para los horarios */
+        /* Estilos para la barra horizontal de horarios */
+        .horario-txt {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between; /* Espacio uniforme entre elementos */
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff; /* Fondo blanco limpio */
+            border-radius: 12px; /* Bordes redondeados para suavizar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            width: 90%; /* Ancho adaptable */
+            max-width: 800px; /* Ancho máximo para evitar demasiado estiramiento */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+            overflow: hidden; /* Para asegurar que no se desborde el contenido */
+        }
+        /* Efecto de hover para mayor interacción */
+        .horario-txt:hover {
+            transform: translateY(-5px); /* Movimiento ligero hacia arriba */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+        }
+        .horario-txt .horario-item {
+            flex: 1; /* Permite que los elementos crezcan equitativamente */
+            margin: 0 10px; /* Espacio horizontal entre los elementos */
+            padding: 10px;
+            background-color: #f9f9f9; /* Fondo suave para cada item */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        }
+        .horario-txt h2 {
+            font-size: 1.6rem; /* Tamaño de fuente ajustado */
+            color: #002147; /* Color azul oscuro elegante */
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 600; /* Negrita para destacar */
+        }
+        .horario-txt h3 {
+            font-size: 1.1rem; /* Tamaño de fuente ligeramente menor */
+            margin-bottom: 5px;
+            color: #00509e; /* Azul más brillante para los subtítulos */
+            font-weight: 500; /* Peso medio para un look sofisticado */
+        }
+        .horario-txt p {
+            font-size: 0.9rem; /* Tamaño de fuente adecuado para legibilidad */
+            color: #555555; /* Texto en gris suave */
+            line-height: 1.4; /* Espaciado entre líneas para claridad */
+        }
+        /* Adaptaciones responsivas */
+        @media (max-width: 768px) {
+            .horario-txt {
+                flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+                width: 95%;
+                padding: 10px;
+            }
+            .horario-txt .horario-item {
+                margin-bottom: 10px; /* Espacio vertical entre los items */
+            }
+        }
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            .nav-bar a {
+                padding: 10px;
+                text-align: center;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header h3 {
+                font-size: 1.2rem;
+            }
+        }
+        /* Importar fuente de Google Fonts */
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+         /* Estilos básicos del formulario de Contacto Emergente */
+        body {
+            font-family: 'Roboto', sans-serif; /* Cambiar a fuente más elegante */
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-popup {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            max-width: 350px; /* Ancho reducido para un diseño más compacto */
+            background-color: #003366; /* Fondo azul oscuro */
+            color: white; /* Texto en blanco para mayor contraste */
+            padding: 20px; /* Aumento del relleno para un aspecto más espacioso */
+            box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+            border-top-left-radius: 15px; /* Bordes más suaves */
+            border-top-right-radius: 15px;
+            display: none;
+            animation: slideUp 0.5s forwards;
+            z-index: 1000;
+        }
+
+        @keyframes slideUp {
+            from { bottom: -100px; }
+            to { bottom: 0; }
+        }
+
+        .contact-popup h2, .contact-popup p {
+            margin: 0 0 15px; /* Aumento del margen inferior */
+            color: #FFFFFF; /* Color de texto en blanco para mejor legibilidad */
+        }
+
+        .contact-popup label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #BBDEFB; /* Color azul claro para el label */
+        }
+
+        .contact-popup input[type="text"],
+        .contact-popup input[type="email"],
+        .contact-popup input[type="tel"],
+        .contact-popup select {
+            width: 100%;
+            padding: 10px; /* Aumento del padding para comodidad */
+            margin-bottom: 15px; /* Aumento del margen inferior */
+            border: 1px solid #00509E; /* Borde azul claro */
+            border-radius: 5px;
+            background-color: #f0f8ff; /* Fondo claro para los campos de entrada */
+            color: #003366; /* Texto en el campo de entrada */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+            font-size: 14px; /* Tamaño de fuente más legible */
+        }
+
+        .contact-popup input[type="text"]:focus,
+        .contact-popup input[type="email"]:focus,
+        .contact-popup input[type="tel"]:focus,
+        .contact-popup select:focus {
+            border-color: #00509E; /* Color del borde al enfocar */
+            box-shadow: 0 0 5px rgba(0, 80, 158, 0.5); /* Sombra al enfocar */
+            outline: none; /* Eliminar el contorno por defecto */
+        }
+
+        .contact-popup button {
+            background-color: #00509E; /* Color del botón */
+            color: white;
+            padding: 10px 15px; /* Tamaño de botón más adecuado */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Transición suave en el color de fondo */
+            font-size: 14px; /* Tamaño de fuente adecuado para el botón */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para el botón */
+        }
+
+        .contact-popup button:hover {
+            background-color: #004080; /* Azul más oscuro al pasar el mouse */
+            transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px; /* Tamaño de fuente más grande */
+            color: #FFFFFF; /* Color de texto del botón cerrar */
+            cursor: pointer;
+            transition: color 0.3s; /* Transición suave en el color */
+        }
+
+        .close-btn:hover {
+            color: #d9534f; /* Color al pasar el mouse */
+        }
+
+        /* Adaptaciones responsivas */
+        @media (max-width: 768px) {
+        .contact-popup {
+            max-width: 90%; /* Ancho máximo para dispositivos móviles */
+            }
+        }
+        /* Sección de Búsqueda para Tarjetas */        
+#busqueda {
+    margin: 20px auto; /* Alinear el contenedor al centro */
+    text-align: center;
+}
+
+#search-input {
+    width: 80%;
+    max-width: 400px; /* Limitar el ancho máximo del campo de búsqueda */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #007bff; /* Cambiar a un color más distintivo */
+    border-radius: 25px; /* Bordes redondeados más suaves */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Sombra sutil */
+    transition: box-shadow 0.2s, border-color 0.2s; /* Transiciones suaves */
+}
+
+#search-input:focus {
+    border-color: #0056b3; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Sombra más pronunciada al enfocar */
+}
+
+.program-list {
+    display: grid; /* Cambiar a grid para mejor control */
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    gap: 20px; /* Espacio entre tarjetas */
+    margin-top: 20px; /* Espacio superior para la lista de tarjetas */
+}
+
+.program-card {
+    background: #ffffff; /* Fondo blanco para las tarjetas */
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 20px; /* Aumentar el espaciado interno de las tarjetas */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s; /* Agregar transición para la sombra */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    min-width: 250px; /* Ancho mínimo para tarjetas */
+    max-width: 300px; /* Ancho máximo para tarjetas */
+}
+
+.program-card:hover {
+    transform: translateY(-5px); /* Elevar la tarjeta al pasar el mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.program-card img {
+    width: 100%;
+    height: 150px; /* Altura de las imágenes */
+    object-fit: cover; /* Mantener la proporción de la imagen */
+    border-radius: 8px; /* Bordes de la imagen más redondeados */
+}
+
+.program-card h3 {
+    font-size: 22px; /* Tamaño del título aumentado */
+    margin: 15px 0; /* Espaciado superior e inferior */
+    color: #333; /* Color del texto */
+}
+
+.program-card p {
+    font-size: 18px; /* Aumentar el tamaño del texto */
+    color: #555;
+}
+
+.program-card a {
+    display: inline-block;
+    margin-top: auto; /* Asegura que el enlace se empuje hacia abajo en el contenedor */
+    padding: 10px 20px; /* Aumentar el padding del botón */
+    background: #007bff; /* Color del botón */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s; /* Transición para el fondo y el movimiento */
+}
+
+.program-card a:hover {
+    background: #0056b3; /* Color al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+   
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f6f8;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e3c72;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        header nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        header nav a:hover {
+            color: #8ab6d6;
+        }
+
+        /* Tarjeta del programa */
+        /* Tarjeta del programa */
+
+.program-card {
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-card-content {
+    max-width: 60%; /* Mantener el contenido textual en un 60% */
+    margin-left: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+.program-card h1 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.program-card p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+.program-card button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.program-card button:hover {
+    background-color: #1c75d1;
+}
+
+.program-card img {
+    max-width: 220px; /* Aumentar el ancho máximo de la imagen */
+    height: auto; /* Mantener la relación de aspecto */
+    border-radius: 12px;
+}
+
+
+
+        /* Estilos para la sección de información adicional */
+        .programa-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .programa-info .texto {
+            max-width: 60%;
+        }
+
+        .programa-info h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .programa-info p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .programa-info button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .tabs {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .tablink {
+            background-color: #e3e8ef;
+            color: #555;
+            border: none;
+            padding: 12px 30px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tablink:hover {
+            background-color: #1e90ff;
+            color: white;
+        }
+
+        .tablink.active {
+            background-color: #1e90ff;
+            color: white;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tabcontent h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .tabcontent p {
+            color: #555;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Imagenes/logo.png" alt="logo" class="logo">
+        <div>
+            <h1>Centro de Estudios Suramericano</h1>
+            <h3>Consolidando el futuro académico</h3>
+        </div>
+    </header>
+    <div class="nav-bar">
+        <img src="Imagenes/logoexperienciablanco.png" alt="Logo Experiencia" class="logo-experience">
+        <span class="brand-name">Punto Experiencia Sibundoy</span>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>       
+        <div class="dropdown">
+            <a href="#programas-academicos"><i class="fas fa-graduation-cap"></i> Programas Académicos</a>
+            <div class="dropdown-content">
+                <div class="dropdown-university">
+                    <a href="#" class="university-title">Fundación Universitaria del Área Andina</a>
+                    <div class="university-menu" aria-labelledby="fundacion-menu">
+                        <a href="#fundacion-pregrado" class="section-title pregrado">
+                            <i class="fas fa-book"></i> Pregrado
+                        </a>
+                        <div class="programs-list">
+                            <a href="#">Derecho</a>
+                            <a href="#">Administración Pública</a>
+                            <a href="#">Comunicación Social</a>
+                            <a href="#">Administración de Empresas</a>
+                            <a href="#">Finanzas y Negocios Internacionales</a>
+                            <a href="#">Licenciatura en Ciencias Sociales</a>
+                            <a href="#">Marketing de Negocios</a>
+                            <a href="#">Economía</a>
+                            <a href="#">Licenciatura en Educación Infantil</a>
+                            <a href="#">Ingeniería Industrial</a>
+                            <a href="#">Ingeniería de Sistemas</a>
+                            <a href="#">Psicología</a>
+                        </div>
+            
+                        <a href="#fundacion-posgrado" class="section-title posgrado">
+                            <i class="fas fa-user-graduate"></i> Posgrado - Especializaciones
+                        </a>
+                        <div class="programs-list">
+                            <a href="#">Informática para la Innovación Educativa</a>
+                            <a href="#">Pedagogía y Docencia</a>
+                            <a href="#">Dirección y Producción de Contenidos Audiovisuales</a>
+                            <a href="#">Derechos de Autor, Propiedad Industrial y Nuevas Tecnologías</a>
+                            <a href="#">Infancia, Adolescencia y Desarrollo Familiar</a>
+                            <a href="#">Gerencia Financiera</a>
+                            <a href="#">Alta Gerencia</a>
+                            <a href="#">Gestión Ambiental</a>
+                            <a href="#">Gerencia en Seguridad y Salud en el Trabajo</a>
+                            <a href="#">Auditoría en Salud</a>
+                        </div>
+            
+                        <a href="#fundacion-maestrias" class="section-title maestria">
+                            <i class="fas fa-certificate"></i> Posgrado - Maestrías
+                        </a>
+                        <div class="programs-list">
+                            <a href="#">Maestría en Gerencia de Mercadeo Digital</a>
+                            <a href="#">Maestría en Innovación</a>
+                            <a href="#">Maestría en Epidemiología</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="dropdown-university">
+                    <a href="#" class="university-title">Institución Universitaria Ceipa</a>
+                    <div class="university-menu" aria-labelledby="ceipa-menu">
+                        <a href="#ceipa-pregrado" class="section-title pregrado">
+                            <i class="fas fa-book"></i> Pregrado
+                        </a>
+                        <div class="programs-list">
+                            <a href="#">Administración Financiera</a>
+                            <a href="#">Administración de Empresas</a>
+                            <a href="#">Contaduría Pública</a>
+                            <a href="#">Administración en Mercadeo</a>
+                            <a href="#">Administración en Negocios Internacionales</a>
+                            <a href="#">Administración Humana</a>
+                        </div>
+                        
+                        <a href="#ceipa-posgrado" class="section-title posgrado">
+                            <i class="fas fa-user-graduate"></i> Posgrado - Especializaciones
+                        </a>
+                        <div class="programs-list">
+                            <a href="#">Especialización en Gerencia</a>
+                            <a href="#">Especialización en Gerencia de Proyectos</a>
+                            <a href="#">Especialización en Gerencia de Mercadeo</a>
+                            <a href="#">Especialización en Gerencia Financiera</a>
+                            <a href="#">Especialización en Gerencia del Talento Humano</a>
+                            <a href="#">Especialización en Gerencia Logística</a>
+                            <a href="#">Especialización en Gestión de Servicios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <a href="#nosotros"><i class="fas fa-info-circle"></i> Nosotros</a>
+        <a href="#horarios"><i class="fas fa-clock"></i> Horarios</a>
+    </div>
+    <nav>
+        <a href="#">Inicio</a> /
+        <a href="#">Pregrado</a> /
+        <a href="#">Profesional</a> /
+        <a href="#">Derecho</a>
+    </nav>
+</header>
+
+<!-- Tarjeta elegante para el programa -->
+<div class="program-card">
+    <div class="program-card-content">
+        <h1>Derecho</h1>
+        <p><strong>COP$ 2.000.000</strong></p>
+        <p>SNIES: 110916 – Res. No. 1048 del 1/02/2022</p>
+        <p>Créditos: 160</p>
+        <button>Inscríbete aquí</button>
+    </div>
+    <img src="Imagenes/U_Derecho.jpg" alt="Imagen del programa de Derecho">
+</div>
+
+<section class="programa-info">
+    <div class="texto">
+        <h2>¡Inscríbete ya!</h2>
+        <p>Forma parte del programa de Derecho, diseñado para brindarte una educación integral en ciencias jurídicas.</p>
+        <button onclick="solicitarInformacion()">Solicitar información</button>
+    </div>
+    <div class="imagen">
+        <img src="Imagenes/logos_areandina.png" alt="Imagen del programa de Derecho">
+    </div>
+</section>
+
+<section class="tabs">
+    <button class="tablink" onclick="openTab(event, 'Descripcion')" id="defaultOpen">Descripción</button>
+    <button class="tablink" onclick="openTab(event, 'InformacionAdicional')">Información adicional</button>
+    <button class="tablink" onclick="openTab(event, 'FichaTecnica')">Ficha Técnica</button>
+    <button class="tablink" onclick="openTab(event, 'Requisitos')">Requisitos de admisión</button>
+    <button class="tablink" onclick="openTab(event, 'Valoraciones')">Valoraciones (0)</button>
+</section>
+
+<section id="Descripcion" class="tabcontent">
+    <h2>Descripción</h2>
+    <p>Las nuevas tecnologías presuponen avances para la humanidad y retos a nivel global...</p>
+</section>
+
+<section id="InformacionAdicional" class="tabcontent">
+    <h2>Información adicional</h2>
+    <p>Aquí puedes agregar información adicional sobre el programa.</p>
+</section>
+
+<section id="FichaTecnica" class="tabcontent">
+    <h2>Ficha Técnica</h2>
+    <p>Aquí puedes agregar la ficha técnica del programa.</p>
+</section>
+
+<section id="Requisitos" class="tabcontent">
+    <h2>Requisitos de admisión</h2>
+    <p>Aquí puedes agregar los requisitos de admisión del programa.</p>
+</section>
+
+<section id="Valoraciones" class="tabcontent">
+    <h2>Valoraciones (0)</h2>
+    <p>No hay valoraciones aún.</p>
+</section>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+
+</html>

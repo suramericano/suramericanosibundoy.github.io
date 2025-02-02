@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Detalle del Programa Académico</title>
+    <style>
+        /* Estilos globales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header.program-header {
+            background: url('Imagenes/U_Derecho.jpg') no-repeat center center/cover;
+            height: 60vh;
+            position: relative;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Filtro suave para la imagen de fondo */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        /* Ajuste de tamaño y espaciado del título */
+        .overlay h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .overlay p {
+            font-size: 1.4em;
+            margin: 15px 0;
+        }
+
+        /* Icono de desplazamiento más elegante */
+        .scroll-down {
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #fff;
+            animation: bounce 2s infinite;
+        }
+
+        /* Animación de desplazamiento */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Sección de detalles del programa */
+        section.program-details {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        /* Contenedor central */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 2em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Botones más grandes y accesibles */
+        .action-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-inscribir, .btn-contacto {
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-inscribir:hover, .btn-contacto:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #2c3e50;
+            color: #ffffff; /* Aquí se asegura que el texto sea blanco */
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #ffffff; /* También aplicamos color blanco aquí */
+        }
+
+        footer a {
+            color: #ffffff; /* Los enlaces también se verán blancos */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="program-header">
+        <div class="overlay">
+            <h1>Nombre del Programa</h1>
+            <p>Pregrado - COP$ 2.000.000</p>
+            <a href="#info-detallada" class="scroll-down"><i class="fas fa-angle-down"></i></a>
+        </div>
+    </header>
+
+    <section id="info-detallada" class="program-details">
+        <div class="container">
+            <h2>Descripción del Programa</h2>
+            <p>Este programa está diseñado para proporcionar a los estudiantes las habilidades y conocimientos necesarios para...</p>
+
+            <h3>Plan de Estudios</h3>
+            <ul>
+                <li>Primer Semestre: Introducción a las Ciencias Jurídicas</li>
+                <li>Segundo Semestre: Derecho Constitucional</li>
+                <!-- Añadir más elementos aquí -->
+            </ul>
+
+            <h3>Requisitos de Ingreso</h3>
+            <ul>
+                <li>Título de bachillerato o equivalente</li>
+                <li>Pruebas de admisión</li>
+                <!-- Añadir más elementos aquí -->
+            </ul>
+
+            <div class="action-buttons">
+                <a href="inscripcion.html" class="btn-inscribir">Inscribirse Ahora</a>
+                <a href="mailto:info@centrodeestudios.com" class="btn-contacto">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Centro de Estudios Suramericano. Todos los derechos reservados.</p>
+        <p>Dirección: Barrio el Cedro Cra 22 n 16-20, Sibundoy, Putumayo, Colombia</p>
+        <p><a href="https://www.centrodeestudios.com">www.centrodeestudios.com</a></p>
+    </footer>
+</body>
+</html>

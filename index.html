@@ -1534,22 +1534,75 @@ h1 {
 <div class="contact-popup" id="contactForm">
     <span class="close-btn" onclick="closeForm()">&times;</span>
     <h2>Elige el programa de tu interés</h2>
-    <p>¡Inscríbete hoy!</p>
-
+    <p>Déjanos tus datos y nos pondremos en contacto contigo para brindarte más información sobre nuestros programas académicos. 🚀✨</p>
+    
+<form action="https://formspree.io/f/xzzdvkrz" method="POST">
     <label for="correo">Correo*</label>
     <input type="email" id="correo" placeholder="Correo" required>
 
-    <label for="apellido">Apellido</label>
+    <label for="nombre">Nombres</label>
+    <input type="text" id="nombre" placeholder="Nombre">
+    
+    <label for="apellido">Apellidos</label>
     <input type="text" id="apellido" placeholder="Apellido">
 
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" placeholder="Nombre">
-
-    <label for="telefono">Número de teléfono</label>
+    <label for="telefono">Número de Celular</label>
     <input type="tel" id="telefono" placeholder="+57 300 000 0000">
 
+    <!-- Programa de Interés -->
+<div class="form-group">
     <label for="programa">Programa de Interés</label>
-    <input type="text" id="programa" placeholder="Programa de Interés">
+    <select id="programa" name="programa">
+        <optgroup label="Pregrado - Fundación Universitaria del Área Andina">
+            <option value="derecho">Derecho</option>
+            <option value="administracion-publica">Administración Pública</option>
+            <option value="comunicacion-social">Comunicación Social</option>
+            <option value="administracion-empresas">Administración de Empresas</option>
+            <option value="finanzas-negocios">Finanzas y Negocios Internacionales</option>
+            <option value="licenciatura-sociales">Licenciatura en Ciencias Sociales</option>
+            <option value="marketing-negocios">Marketing de Negocios</option>
+            <option value="economia">Economía</option>
+            <option value="educacion-infantil">Licenciatura en Educación Infantil</option>
+            <option value="ingenieria-industrial">Ingeniería Industrial</option>
+            <option value="ingenieria-sistemas">Ingeniería de Sistemas</option>
+            <option value="psicologia">Psicología</option>
+        </optgroup>
+        <optgroup label="Posgrado - Especializaciones - Fundación Universitaria del Área Andina">
+            <option value="informatica-educativa">Informática para la Innovación Educativa</option>
+            <option value="pedagogia-docencia">Pedagogía y Docencia</option>
+            <option value="produccion-audiovisual">Dirección y Producción de Contenidos Audiovisuales</option>
+            <option value="derechos-autor">Derechos de Autor, Propiedad Industrial y Nuevas Tecnologías</option>
+            <option value="infancia-adolescencia">Infancia, Adolescencia y Desarrollo Familiar</option>
+            <option value="gerencia-financiera">Gerencia Financiera</option>
+            <option value="alta-gerencia">Alta Gerencia</option>
+            <option value="gestion-ambiental">Gestión Ambiental</option>
+            <option value="seguridad-salud">Gerencia en Seguridad y Salud en el Trabajo</option>
+            <option value="auditoria-salud">Auditoría en Salud</option>
+        </optgroup>
+        <optgroup label="Posgrado - Maestrías - Fundación Universitaria del Área Andina">
+            <option value="gerencia-marketing-digital">Maestría en Gerencia de Mercadeo Digital</option>
+            <option value="maestria-innovacion">Maestría en Innovación</option>
+            <option value="maestria-epidemiologia">Maestría en Epidemiología</option>
+        </optgroup>
+        <optgroup label="Pregrado - Institución Universitaria Ceipa">
+            <option value="admin-financiera">Administración Financiera</option>
+            <option value="admin-empresas">Administración de Empresas</option>
+            <option value="contaduria-publica">Contaduría Pública</option>
+            <option value="admin-mercadeo">Administración en Mercadeo</option>
+            <option value="admin-negocios">Administración en Negocios Internacionales</option>
+            <option value="admin-humana">Administración Humana</option>
+        </optgroup>
+        <optgroup label="Posgrado - Especializaciones en Ceipa">
+            <option value="gerencia">Especialización en Gerencia</option>
+            <option value="gerencia-proyectos">Especialización en Gerencia de Proyectos</option>
+            <option value="gerencia-mercadeo">Especialización en Gerencia de Mercadeo</option>
+            <option value="gerencia-financiera">Especialización en Gerencia Financiera</option>
+            <option value="gerencia-talento-humano">Especialización en Gerencia del Talento Humano</option>
+            <option value="gerencia-logistica">Especialización en Gerencia Logística</option>
+            <option value="gestion-servicios">Especialización en Gestión de Servicios</option>
+        </optgroup>
+    </select>
+</div>
 
     <label for="educacion">¿Cuál es tu nivel de educación?</label>
     <select id="educacion">
@@ -1569,7 +1622,7 @@ h1 {
     <p>&copy; 2024 Centro de Estudios Suramericano. Todos los derechos reservados.</p>
     <p>Dirección: Barrio el cedro Cra 22 n 16-20, Sibundoy, Putumayo, Colombia</p>
     <img src="Imagenes/logo.png" alt="Logo Footer">
-    <p style="margin-top: 10px; font-size: 0.9em; color: #cccccc;" class="creditos">Desarrollado por David Romo y Laura Burgos</p>
+    <p style="margin-top: 10px; font-size: 0.9em; color: #cccccc;" class="creditos"></p>
 </footer>
 
 <script>

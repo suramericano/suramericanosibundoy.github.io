@@ -1552,57 +1552,63 @@ h1 {
     <!-- Programa de Interés -->
     <div class="form-group">
         <label for="programa">Programa de Interés</label>
-        <select id="programa" name="programa">
+        <select id="programa" name="programa" onchange="actualizarUniversidad()">
             <optgroup label="Pregrado - Fundación Universitaria del Área Andina">
-                <option value="derecho">Derecho</option>
-                <option value="administracion-publica">Administración Pública</option>
-                <option value="comunicacion-social">Comunicación Social</option>
-                <option value="administracion-empresas">Administración de Empresas</option>
-                <option value="finanzas-negocios">Finanzas y Negocios Internacionales</option>
-                <option value="licenciatura-sociales">Licenciatura en Ciencias Sociales</option>
-                <option value="marketing-negocios">Marketing de Negocios</option>
-                <option value="economia">Economía</option>
-                <option value="educacion-infantil">Licenciatura en Educación Infantil</option>
-                <option value="ingenieria-industrial">Ingeniería Industrial</option>
-                <option value="ingenieria-sistemas">Ingeniería de Sistemas</option>
-                <option value="psicologia">Psicología</option>
+                <option value="derecho" data-universidad="Fundación Universitaria del Área Andina">Derecho</option>
+                <option value="administracion-publica" data-universidad="Fundación Universitaria del Área Andina">Administración Pública</option>
+                <option value="comunicacion-social" data-universidad="Fundación Universitaria del Área Andina">Comunicación Social</option>
+                <option value="administracion-empresas" data-universidad="Fundación Universitaria del Área Andina">Administración de Empresas</option>
+                <option value="finanzas-negocios" data-universidad="Fundación Universitaria del Área Andina">Finanzas y Negocios Internacionales</option>
+                <option value="licenciatura-sociales" data-universidad="Fundación Universitaria del Área Andina">Licenciatura en Ciencias Sociales</option>
+                <option value="marketing-negocios" data-universidad="Fundación Universitaria del Área Andina">Marketing de Negocios</option>
+                <option value="economia" data-universidad="Fundación Universitaria del Área Andina">Economía</option>
+                <option value="educacion-infantil" data-universidad="Fundación Universitaria del Área Andina">Licenciatura en Educación Infantil</option>
+                <option value="ingenieria-industrial" data-universidad="Fundación Universitaria del Área Andina">Ingeniería Industrial</option>
+                <option value="ingenieria-sistemas" data-universidad="Fundación Universitaria del Área Andina">Ingeniería de Sistemas</option>
+                <option value="psicologia" data-universidad="Fundación Universitaria del Área Andina">Psicología</option>
             </optgroup>
             <optgroup label="Posgrado - Especializaciones - Fundación Universitaria del Área Andina">
-                <option value="informatica-educativa">Informática para la Innovación Educativa</option>
-                <option value="pedagogia-docencia">Pedagogía y Docencia</option>
-                <option value="produccion-audiovisual">Dirección y Producción de Contenidos Audiovisuales</option>
-                <option value="derechos-autor">Derechos de Autor, Propiedad Industrial y Nuevas Tecnologías</option>
-                <option value="infancia-adolescencia">Infancia, Adolescencia y Desarrollo Familiar</option>
-                <option value="gerencia-financiera">Gerencia Financiera</option>
-                <option value="alta-gerencia">Alta Gerencia</option>
-                <option value="gestion-ambiental">Gestión Ambiental</option>
-                <option value="seguridad-salud">Gerencia en Seguridad y Salud en el Trabajo</option>
-                <option value="auditoria-salud">Auditoría en Salud</option>
+                <option value="informatica-educativa" data-universidad="Fundación Universitaria del Área Andina">Especialización en Informática para la Innovación Educativa</option>
+                <option value="pedagogia-docencia" data-universidad="Fundación Universitaria del Área Andina">Especialización en Pedagogía y Docencia</option>
+                <option value="produccion-audiovisual" data-universidad="Fundación Universitaria del Área Andina">Especialización en Dirección y Producción de Contenidos Audiovisuales</option>
+                <option value="derechos-autor" data-universidad="Fundación Universitaria del Área Andina">Especialización en Derechos de Autor, Propiedad Industrial y Nuevas Tecnologías</option>
+                <option value="infancia-adolescencia" data-universidad="Fundación Universitaria del Área Andina">Especialización en Infancia, Adolescencia y Desarrollo Familiar</option>
+                <option value="gerencia-financiera" data-universidad="Fundación Universitaria del Área Andina">Especialización en Gerencia Financiera</option>
+                <option value="alta-gerencia" data-universidad="Fundación Universitaria del Área Andina">Especialización en Alta Gerencia</option>
+                <option value="gestion-ambiental" data-universidad="Fundación Universitaria del Área Andina">Especialización en Gestión Ambiental</option>
+                <option value="seguridad-salud" data-universidad="Fundación Universitaria del Área Andina">Especialización en Gerencia en Seguridad y Salud en el Trabajo</option>
+                <option value="auditoria-salud" data-universidad="Fundación Universitaria del Área Andina">Especialización en Auditoría en Salud</option>
             </optgroup>
             <optgroup label="Posgrado - Maestrías - Fundación Universitaria del Área Andina">
-                <option value="gerencia-marketing-digital">Maestría en Gerencia de Mercadeo Digital</option>
-                <option value="maestria-innovacion">Maestría en Innovación</option>
-                <option value="maestria-epidemiologia">Maestría en Epidemiología</option>
+                <option value="gerencia-marketing-digital" data-universidad="Fundación Universitaria del Área Andina">Maestría en Gerencia de Mercadeo Digital</option>
+                <option value="maestria-innovacion" data-universidad="Fundación Universitaria del Área Andina">Maestría en Innovación</option>
+                <option value="maestria-epidemiologia" data-universidad="Fundación Universitaria del Área Andina">Maestría en Epidemiología</option>
             </optgroup>
             <optgroup label="Pregrado - Institución Universitaria Ceipa">
-                <option value="admin-financiera">Administración Financiera</option>
-                <option value="admin-empresas">Administración de Empresas</option>
-                <option value="contaduria-publica">Contaduría Pública</option>
-                <option value="admin-mercadeo">Administración en Mercadeo</option>
-                <option value="admin-negocios">Administración en Negocios Internacionales</option>
-                <option value="admin-humana">Administración Humana</option>
+                <option value="admin-financiera" data-universidad="Institución Universitaria Ceipa">Administración Financiera</option>
+                <option value="admin-empresas" data-universidad="Institución Universitaria Ceipa">Administración de Empresas</option>
+                <option value="contaduria-publica" data-universidad="Institución Universitaria Ceipa">Contaduría Pública</option>
+                <option value="admin-mercadeo" data-universidad="Institución Universitaria Ceipa">Administración en Mercadeo</option>
+                <option value="admin-negocios" data-universidad="Institución Universitaria Ceipa">Administración en Negocios Internacionales</option>
+                <option value="admin-humana" data-universidad="Institución Universitaria Ceipa">Administración Humana</option>
             </optgroup>
             <optgroup label="Posgrado - Especializaciones en Ceipa">
-                <option value="gerencia">Especialización en Gerencia</option>
-                <option value="gerencia-proyectos">Especialización en Gerencia de Proyectos</option>
-                <option value="gerencia-mercadeo">Especialización en Gerencia de Mercadeo</option>
-                <option value="gerencia-financiera">Especialización en Gerencia Financiera</option>
-                <option value="gerencia-talento-humano">Especialización en Gerencia del Talento Humano</option>
-                <option value="gerencia-logistica">Especialización en Gerencia Logística</option>
-                <option value="gestion-servicios">Especialización en Gestión de Servicios</option>
+                <option value="gerencia" data-universidad="Institución Universitaria Ceipa">Especialización en Gerencia</option>
+                <option value="gerencia-proyectos" data-universidad="Institución Universitaria Ceipa">Especialización en Gerencia de Proyectos</option>
+                <option value="gerencia-mercadeo" data-universidad="Institución Universitaria Ceipa">Especialización en Gerencia de Mercadeo</option>
+                <option value="gerencia-financiera" data-universidad="Institución Universitaria Ceipa">Especialización en Gerencia Financiera</option>
+                <option value="gerencia-talento-humano" data-universidad="Institución Universitaria Ceipa">Especialización en Gerencia del Talento Humano</option>
+                <option value="gerencia-logistica" data-universidad="Institución Universitaria Ceipa">Especialización en Gerencia Logística</option>
+                <option value="gestion-servicios" data-universidad="Institución Universitaria Ceipa">Especialización en Gestión de Servicios</option>
             </optgroup>
         </select>
     </div>
+
+        <!-- Universidad -->
+        <div class="form-group">
+            <label for="universidad">Universidad</label>
+            <input type="text" id="universidad" name="universidad" readonly placeholder="Selecciona un programa">
+        </div>
 
         <label for="educacion">¿Cuál es tu nivel de educación?</label>
         <select id="educacion" name="educacion">
@@ -1707,6 +1713,20 @@ h1 {
     function removeAccents(str) {
         return str.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Elimina los acentos
     }
+     // Actualizar nombre de la universidad en Formulario Emergente
+    function actualizarUniversidad() {
+    var selectPrograma = document.getElementById("programa");
+    var selectedOption = selectPrograma.options[selectPrograma.selectedIndex];
+    var universidad = selectedOption.getAttribute("data-universidad");
+
+    // Verificar si el programa tiene universidad asociada antes de actualizar el campo
+    if (universidad) {
+        document.getElementById("universidad").value = universidad;
+    } else {
+        document.getElementById("universidad").value = "Selecciona un programa";
+    }
+}
+
     </script>
 </body>
 </html>

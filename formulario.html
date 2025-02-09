@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Inscripción</title>
+    <title>Formulario de Pre-Inscripción</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,28 +82,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Formulario de Inscripción</h1>
+        <h1>Formulario de Pre-Inscripción</h1>
         <div class="form-container">
-            <form>
-                <!-- Información Personal -->
+            <form action="https://formspree.io/f/xzzdvkrz" method="POST">
+                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="tipoDocumento">Tipo de documento</label>
-                        <select id="tipoDocumento" name="tipoDocumento">
-                            <option value="150">Carnet Diplomático</option>
+                        <select id="tipoDocumento" name="tipoDocumento" required>                            
                             <option value="141">Cédula de Ciudadanía</option>
-                            <option value="142">Cédula de Extranjería</option>
-                            <option value="148">Fideicomiso</option>
-                            <option value="143">Número de Identificación Tributaria</option>
-                            <option value="145">Pasaporte</option>
-                            <option value="149">Registro Civil</option>
-                            <option value="147">Sociedad Extranjera Sin NIT en Colombia</option>
-                            <option value="144">Tarjeta de Identidad</option>
-                            <option value="146">Tarjeta del Seguro Social Extranjero</option>
+                            <option value="142">Cédula de Extranjería</option>                                                                                                     
+                            <option value="143">Tarjeta de Identidad</option>                            
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="identificacion">Identificación</label>
+                        <label for="identificacion">Número de Identificación</label>
                         <input type="text" id="identificacion" name="identificacion" required>
                     </div>
                     <div class="form-group">
@@ -118,8 +111,13 @@
                     </div>
                     <div class="form-group">
                         <label for="nacionalidad">Nacionalidad</label>
-                        <input type="text" id="nacionalidad" name="nacionalidad" required>
-                    </div>
+                        <select id="nacionalidad" name="nacionalidad" required>
+                            <option value="" disabled selected>Seleccione su nacionalidad</option>
+                            <option value="colombiano">Colombiano</option>
+                            <option value="venezolano">Venezolano</option>
+                            <option value="ecuatoriano">Ecuatoriano</option>
+                        </select>
+                    </div>                    
                     <div class="form-group">
                         <label for="primerNombre">Primer nombre</label>
                         <input type="text" id="primerNombre" name="primerNombre" required>
@@ -150,34 +148,15 @@
                     </div>
                     <div class="form-group">
                         <label for="estadoCivil">Estado civil</label>
-                        <select id="estadoCivil" name="estadoCivil">
-                            <option value="1">SOLTERO(A)</option>
-                            <option value="2">CASADO(A)</option>
-                            <option value="3">DIVORCIADO(A)</option>
-                            <option value="4">VIUDO(A)</option>
-                            <option value="5">UNIÓN LIBRE</option>
-                            <option value="7">SEPARADO(A)</option>
-                            <option value="8">CONVIVIENTE</option>
-                            <option value="9">CASADO CON SEPARACION DE BIENES</option>
+                        <select id="estadoCivil" name="estadoCivil" required>
+                            <option value="1">Soltero(a)</option>
+                            <option value="2">Casado(a)</option>                          
+                            <option value="3">Unión libre</option>                                                     
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="fechaNacimiento">Fecha de nacimiento</label>
                         <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="municipioNacimiento">Municipio de nacimiento</label>
-                        <input type="text" id="municipioNacimiento" name="municipioNacimiento" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="direccionResidencia">Dirección de residencia</label>
-                        <input type="text" id="direccionResidencia" name="direccionResidencia" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="municipioResidencia">Municipio de residencia</label>
-                        <input type="text" id="municipioResidencia" name="municipioResidencia" required>
                     </div>
                 </div>
                 <div class="form-row">
@@ -193,41 +172,21 @@
                         <label for="correoElectronico">Correo electrónico</label>
                         <input type="email" id="correoElectronico" name="correoElectronico" required>
                     </div>
+                    <div class="form-group">
+                        <label for="grupoEtnico">Grupo étnico</label>
+                        <select id="grupoEtnico" name="grupoEtnico">
+                            <option value="1">NO INFORMA</option>
+                            <option value="2">PUEBLO INDÍGENA</option>
+                            <option value="3">COMUNIDAD NEGRA</option>
+                            <option value="4">PUEBLO RROM</option>
+                            <option value="5">NO PERTENECE</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="correoInstitucional">Correo institucional</label>
-                        <input type="email" id="correoInstitucional" name="correoInstitucional">
-                    </div>
-                    <div class="form-group">
-                        <label for="grupoEtnico">Grupo étnico</label>
-                        <select id="grupoEtnico" name="grupoEtnico">
-                            <option value="1">NO INFORMA</option>
-                            <option value="2">PUEBLO INDÍGENA</option>
-                            <option value="3">COMUNIDAD NEGRA</option>
-                            <option value="4">PUEBLO RROM</option>
-                            <option value="5">NO PERTENECE</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="grupoEtnico">Grupo étnico</label>
-                        <select id="grupoEtnico" name="grupoEtnico">
-                            <option value="1">NO INFORMA</option>
-                            <option value="2">PUEBLO INDÍGENA</option>
-                            <option value="3">COMUNIDAD NEGRA</option>
-                            <option value="4">PUEBLO RROM</option>
-                            <option value="5">NO PERTENECE</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="clase">Clase</label>
-                    <input type="text" id="clase" name="clase">
-                </div>
-            </div>
-                    <div class="form-group">
                         <label for="tipoSangre">Tipo de sangre</label>
-                        <select id="tipoSangre" name="tipoSangre">
+                        <select id="tipoSangre" name="tipoSangre" required>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -238,160 +197,297 @@
                             <option value="O-">O-</option>
                         </select>
                     </div>
-                
+
+                    <h4 class="text-center mb-3">Dirección de Residencia</h4>
+
+                <div class="form-group">
+                    <label for="direccionResidencia">Dirección</label>
+                    <input type="text" id="direccionResidencia" name="direccionResidencia" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudadResidencia">Ciudad</label>
+                    <input type="text" id="ciudadResidencia" name="ciudadResidencia" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="departamentoResidencia">Departamento</label>
+                    <select id="departamentoResidencia" name="departamentoResidencia" class="form-control" required>
+                        <option value="">Seleccione un departamento</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Antioquia">Antioquia</option>
+                        <option value="Arauca">Arauca</option>
+                        <option value="Atlántico">Atlántico</option>
+                        <option value="Bolívar">Bolívar</option>
+                        <option value="Boyacá">Boyacá</option>
+                        <option value="Caldas">Caldas</option>
+                        <option value="Caquetá">Caquetá</option>
+                        <option value="Casanare">Casanare</option>
+                        <option value="Cauca">Cauca</option>
+                        <option value="Cesar">Cesar</option>
+                        <option value="Chocó">Chocó</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Cundinamarca">Cundinamarca</option>
+                        <option value="Guainía">Guainía</option>
+                        <option value="Guaviare">Guaviare</option>
+                        <option value="Huila">Huila</option>
+                        <option value="La Guajira">La Guajira</option>
+                        <option value="Magdalena">Magdalena</option>
+                        <option value="Meta">Meta</option>
+                        <option value="Nariño">Nariño</option>
+                        <option value="Norte de Santander">Norte de Santander</option>
+                        <option value="Putumayo">Putumayo</option>
+                        <option value="Quindío">Quindío</option>
+                        <option value="Risaralda">Risaralda</option>
+                        <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                        <option value="Santander">Santander</option>
+                        <option value="Sucre">Sucre</option>
+                        <option value="Tolima">Tolima</option>
+                        <option value="Valle del Cauca">Valle del Cauca</option>
+                        <option value="Vaupés">Vaupés</option>
+                        <option value="Vichada">Vichada</option>
+                    </select>
+                </div>                
+
+                <div class="form-group">
+                    <label for="zonaResidencia">Zona de residencia</label>
+                    <select id="zonaResidencia" name="zonaResidencia" class="form-control" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="urbano">Urbana</option>
+                        <option value="rural">Rural</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="estrato">Estrato</label>
+                    <select id="estrato" name="estrato" class="form-control" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="0">Estrato 0</option>
+                        <option value="1">Estrato 1</option>
+                        <option value="2">Estrato 2</option>
+                        <option value="3">Estrato 3</option>
+                        <option value="4">Estrato 4</option>
+                        <option value="5">Estrato 5</option>
+                        <option value="6">Estrato 6</option>
+                    </select>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label>¿Tiene discapacidad?</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="discapacidad" value="si"> Sí</label>
-                            <label><input type="radio" name="discapacidad" value="no"> No</label>
+                            <label><input type="radio" name="discapacidad" value="si" required> Sí</label>
+                            <label><input type="radio" name="discapacidad" value="no" required> No</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="tipoDiscapacidad">Tipo de discapacidad</label>
-                        <select id="tipoDiscapacidad" name="tipoDiscapacidad">
-                            <option value="1">NO APLICA</option>
-                            <option value="2">DISCAPACIDAD SENSORIAL - SORDERA PROFUNDA</option>
-                            <option value="3">DISCAPACIDAD SENSORIAL - HIPOACUSIA</option>
-                            <option value="4">DISCAPACIDAD SENSORIAL - CEGUERA</option>
-                            <option value="5">DISCAPACIDAD SENSORIAL - BAJA VISIÓN</option>
-                            <option value="6">DISCAPACIDAD SENSORIAL - SORDOCEGUERA</option>
-                            <option value="7">DISCAPACIDAD INTELECTUAL</option>
-                            <option value="8">DISCAPACIDAD PSICOSOCIAL</option>
-                            <option value="9">DISCAPACIDAD MÚLTIPLE</option>
-                            <option value="10">DISCAPACIDAD FISICA O MOTORA</option>
+                        <select id="tipoDiscapacidad" name="tipoDiscapacidad" required>
+                            <option value="1">No aplica</option>
+                            <option value="2">Sensorial - Sordera profunda</option>
+                            <option value="3">Sensorial - Hipoacusia</option>
+                            <option value="4">Sensorial - Ceguera</option>
+                            <option value="5">Sensorial - Baja visión</option>
+                            <option value="6">Sensorial - Sordoceguera</option>
+                            <option value="7">Intelectual</option>
+                            <option value="8">Psicosocial</option>
+                            <option value="9">Múltiple</option>
+                            <option value="10">Física o motora</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="zonaResidencia">Zona de residencia</label>
-                        <select id="zonaResidencia" name="zonaResidencia">
-                            <option value="urbano">URBANA</option>
-                            <option value="rural">RURAL</option>
-                        </select>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="estrato">Estrato</label>
-                        <select id="estrato" name="estrato">
-                            <option value="ESTRATO 0">ESTRATO 0</option>
-                            <option value="ESTRATO 1">ESTRATO 1</option>
-                            <option value="ESTRATO 2">ESTRATO 2</option>
-                            <option value="ESTRATO 3">ESTRATO 3</option>
-                            <option value="ESTRATO 4">ESTRATO 4</option>
-                            <option value="ESTRATO 5">ESTRATO 5</option>
-                            <option value="ESTRATO 6">ESTRATO 6</option>
-                        </select>
-                    </div>                   
-                </div>
+                                                                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="medioEntero">¿Por cuál medio se enteró?</label>
-                        <select id="medioEntero" name="medioEntero">
+                        <select id="medioEntero" name="medioEntero" class="form-control">
                             <option value="ALGUIEN LE CONTÓ">ALGUIEN LE CONTÓ</option>
                             <option value="LE ENTREGARON UN VOLANTE">LE ENTREGARON UN VOLANTE</option>
                             <option value="LO LLAMARON">LO LLAMARON</option>
-                            <option value="MEDIOS DE COMUNICACIÓN (RADIO, TV O PRENSA)">MEDIOS DE COMUNICACIÓN (RADIO, TV O PRENSA)</option>
+                            <option value="MEDIOS DE COMUNICACIÓN">MEDIOS DE COMUNICACIÓN (RADIO, TV O PRENSA)</option>
                             <option value="PASABA POR EL LOCAL">PASABA POR EL LOCAL</option>
                             <option value="PLAN AMIGOS">PLAN AMIGOS</option>
-                            <option value="REDES SOCIALES O PAGINA WEB">REDES SOCIALES O PAGINA WEB</option>
+                            <option value="REDES SOCIALES">REDES SOCIALES O PÁGINA WEB</option>
                             <option value="TRABAJA EN EXPERIENCIA">TRABAJA EN EXPERIENCIA</option>
                             <option value="TALLER">TALLER</option>
                             <option value="REFERIDO">REFERIDO</option>
                         </select>
                     </div>
                 </div>
-                <div class="form-row"></div>
-                    <div class="form-group">
-                        <label for="grupoSanguineo">Grupo sanguíneo</label>
-                        <select id="grupoSanguineo" name="grupoSanguineo">
-                            <option value="a_positive">A+</option>
-                            <option value="a_negative">A-</option>
-                            <option value="b_positive">B+</option>
-                            <option value="b_negative">B-</option>
-                            <option value="ab_positive">AB+</option>
-                            <option value="ab_negative">AB-</option>
-                            <option value="o_positive">O+</option>
-                            <option value="o_negative">O-</option>
-                        </select>
-                    </div>
-                </div>
+                
                 <!-- Nuevos Campos -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="eps">Entidad Promotora de Salud</label>
-                        <input type="text" id="eps" name="eps">
+                        <input type="text" id="eps" name="eps" class="form-control">
                     </div>
                 </div>
+                
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="nombreAcudiente">Nombre del acudiente</label>
-                        <input type="text" id="nombreAcudiente" name="nombreAcudiente">
+                        <label for="nombresAcudiente">Nombres del Acudiente</label>
+                        <input type="text" id="nombresAcudiente" name="nombresAcudiente" class="form-control" required>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="apellidosAcudiente">Apellidos del Acudiente</label>
+                        <input type="text" id="apellidosAcudiente" name="apellidosAcudiente" class="form-control" required>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="identificacionAcudiente">Identificación del acudiente</label>
-                        <input type="text" id="identificacionAcudiente" name="identificacionAcudiente">
+                        <input type="text" id="identificacionAcudiente" name="identificacionAcudiente" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="emailAcudiente">Email del acudiente</label>
-                        <input type="email" id="emailAcudiente" name="emailAcudiente">
+                        <input type="email" id="emailAcudiente" name="emailAcudiente" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="telefonoAcudiente">Teléfono del acudiente</label>
-                        <input type="tel" id="telefonoAcudiente" name="telefonoAcudiente">
+                        <input type="tel" id="telefonoAcudiente" name="telefonoAcudiente" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ultimoEstudio">Último Estudio Realizado</label>
+                        <select id="ultimoEstudio" name="ultimoEstudio" class="form-control">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="bachiller">Bachiller</option>
+                            <option value="tecnico">Técnico</option>
+                            <option value="tecnologo">Tecnólogo</option>
+                            <option value="pregrado_incompleto">Pregrado Incompleto</option>
+                            <option value="pregrado_completo">Pregrado Completo</option>
+                            <option value="posgrado">Posgrado (Especialización, Maestría, Doctorado)</option>
+                            <option value="otro">Otro</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="gradoActual">Grado Actual del Estudiante</label>
-                        <input type="text" id="gradoActual" name="gradoActual">
+                        <label for="homologante">¿Es Homologante?</label>
+                        <select id="homologante" name="homologante" class="form-control">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
-                </div>
+                </div>              
+                
+                <!-- Contacto Familiar -->
+                <h4>Datos de Contacto Familiares</h4>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="contactoFamiliar">Datos de Contacto o Familiares</label>
-                    </div>
                     <div class="form-group">
                         <label for="parentesco">Parentesco</label>
-                        <input type="text" id="parentesco" name="parentesco">
+                        <select id="parentesco" name="parentesco" class="form-control">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="padre">Padre</option>
+                            <option value="madre">Madre</option>
+                            <option value="hermano">Hermano</option>
+                            <option value="hermana">Hermana</option>
+                            <option value="abuelo">Abuelo</option>
+                            <option value="abuela">Abuela</option>
+                            <option value="tio">Tío</option>
+                            <option value="tia">Tía</option>
+                            <option value="tutor">Tutor</option>
+                            <option value="otro">Otro</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="nombresContacto">Nombres</label>
-                        <input type="text" id="nombresContacto" name="nombresContacto">
+                        <input type="text" id="nombresContacto" name="nombresContacto" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="apellidosContacto">Apellidos</label>
-                        <input type="text" id="apellidosContacto" name="apellidosContacto">
+                        <input type="text" id="apellidosContacto" name="apellidosContacto" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="telefonoContacto">Teléfono</label>
-                        <input type="tel" id="telefonoContacto" name="telefonoContacto">
+                        <input type="tel" id="telefonoContacto" name="telefonoContacto" class="form-control">
                     </div>
+                </div>                
+                <!-- Programa Académico -->
+                <div class="form-group">
+                    <label for="programaAcademico">Programa Académico</label>
+                    <select id="programaAcademico" name="programaAcademico">
+                        <optgroup label="Pregrado - Fundación Universitaria del Área Andina">
+                            <option>Derecho</option>
+                            <option>Administración Pública</option>
+                            <option>Comunicación Social</option>
+                            <option>Administración de Empresas</option>
+                            <option>Finanzas y Negocios Internacionales</option>
+                            <option>Licenciatura en Ciencias Sociales</option>
+                            <option>Marketing de Negocios</option>
+                            <option>Economía</option>
+                            <option>Licenciatura en Educación Infantil</option>
+                            <option>Ingeniería Industrial</option>
+                            <option>Ingeniería de Sistemas</option>
+                            <option>Psicología</option>
+                        </optgroup>
+                        <optgroup label="Posgrado - Especializaciones - Fundación Universitaria del Área Andina">
+                            <option>Informática para la Innovación Educativa</option>
+                            <option>Pedagogía y Docencia</option>
+                            <option>Dirección y Producción de Contenidos Audiovisuales</option>
+                            <option>Derechos de Autor, Propiedad Industrial y Nuevas Tecnologías</option>
+                            <option>Infancia, Adolescencia y Desarrollo Familiar</option>
+                            <option>Gerencia Financiera</option>
+                            <option>Alta Gerencia</option>
+                            <option>Gestión Ambiental</option>
+                            <option>Gerencia en Seguridad y Salud en el Trabajo</option>
+                            <option>Auditoría en Salud</option>
+                        </optgroup>
+                        <optgroup label="Posgrado - Maestrías - Fundación Universitaria del Área Andina">
+                            <option>Maestría en Gerencia de Mercadeo Digital</option>
+                            <option>Maestría en Innovación</option>
+                            <option>Maestría en Epidemiología</option>
+                        </optgroup>
+                        <optgroup label="Pregrado - Institución Universitaria Ceipa">
+                            <option>Administración Financiera</option>
+                            <option>Administración de Empresas</option>
+                            <option>Contaduría Pública</option>
+                            <option>Administración en Mercadeo</option>
+                            <option>Administración en Negocios Internacionales</option>
+                            <option>Administración Humana</option>
+                        </optgroup>
+                        <optgroup label="Posgrado - Especializaciones en Ceipa">
+                            <option>Especialización en Gerencia</option>
+                            <option>Especialización en Gerencia de Proyectos</option>
+                            <option>Especialización en Gerencia de Mercadeo</option>
+                            <option>Especialización en Gerencia Financiera</option>
+                            <option>Especialización en Gerencia del Talento Humano</option>
+                            <option>Especialización en Gerencia Logística</option>
+                            <option>Especialización en Gestión de Servicios</option>
+                        </optgroup>
+                    </select>
                 </div>
+                
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="programaAcademico">Programa Académico</label>
-                        <input type="text" id="programaAcademico" name="programaAcademico">
+                        <label for="puntoExperiencia">Punto Exp</label>
+                        <select id="puntoExperiencia" name="puntoExperiencia" class="form-control">
+                            <option value="sibundoy">Sibundoy</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="puntoExperiencia">Punto de experiencia</label>
-                        <input type="text" id="puntoExperiencia" name="puntoExperiencia">
-                    </div>
-                    <div class="form-group">
-                        <label for="periodoAcademico">Periodo Académico</label>
-                        <input type="text" id="periodoAcademico" name="periodoAcademico">
+                        <label for="periodoAcademico">Periodo</label>
+                        <select id="periodoAcademico" name="periodoAcademico" class="form-control">
+                            <option value="2025-1">2025-1</option>
+                            <option value="2025-2">2025-2</option>
+                            <option value="2026-1">2026-1</option>
+                        </select>
                     </div>
                 </div>
+                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="asesorComercial">Asesor Comercial</label>
-                        <input type="text" id="asesorComercial" name="asesorComercial">
+                        <select id="asesorComercial" name="asesorComercial" class="form-control">
+                            <option value="NELCY LEIDY GARCIA SOLARTE">NELCY LEIDY GARCIA SOLARTE</option>
+                        </select>
                     </div>
                 </div>
+                
                 <div class="form-actions">
-                    <button type="submit">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
-            </form>
-        </div>
-    </div>
-</body>
-</html>
+                

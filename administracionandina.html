@@ -322,18 +322,48 @@ header h3 {
             font-size: 1.75rem; /* Tamaño de fuente ligeramente menor */
             }
         }
+
         /* Media query para pantallas pequeñas (hasta 768px) */
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
+        .dropdown {
+            display: block; /* Asegura que los menús se adapten a móviles */
+            width: 100%;
+            }
+
+        .dropdown-content {
+            position: static; /* Evita el desfase en móviles */
+            width: 100%; /* Ocupar el ancho completo */
+            max-height: 300px; /* Limita el tamaño en móviles */
+            overflow-y: auto; /* Agrega scroll si es necesario */
+            text-align: center; /* Centra los elementos */
+            }
+
+        .dropdown-content a {
+            font-size: 1rem; /* Aumenta un poco el tamaño en móviles */
+            padding: 12px 15px; /* Más espacio para tocar con el dedo */
+            }
+
+        .university-menu {
+            position: static;
+            max-height: 300px;
+            overflow-y: auto;
+            width: 100%;
+            }
+
+        .nav-bar {
+            flex-direction: column; /* Asegura que la barra de navegación se ajuste bien */
+            text-align: center;
+            }
+
         .brand-name {
-            font-size: 1.5rem; /* Tamaño de fuente aún menor para pantallas móviles */
+            font-size: 1.5rem; /* Reduce el tamaño del logo y nombre */
+            }
+
+        .nav-bar img.logo-experience {
+            height: 50px; /* Ajusta el tamaño del logo en móviles */
             }
         }
-        /* Media query para pantallas muy pequeñas (hasta 480px) */
-        @media (max-width: 480px) {
-        .brand-name {
-            font-size: 1.2rem; /* Tamaño aún más pequeño en pantallas muy reducidas */
-            }
-        }
+
         /* Estilos para las secciones */
         .section {
             background-color: #ffffff;
@@ -416,7 +446,7 @@ header h3 {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada y redonda */
         }         
    
-body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;

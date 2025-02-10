@@ -306,32 +306,51 @@ header h3 {
             border-radius: 4px; /* Bordes redondeados para los enlaces */
             transition: background-color 0.3s ease, color 0.3s ease; /* Transición para el fondo y color */
         }
-        /* Efecto al pasar el mouse sobre los enlaces de la lista */
-        .programs-list a:hover {
-            color: #FFD700; /* Color del enlace al pasar el mouse */
-            background-color: rgba(255, 215, 0, 0.2); /* Fondo ligero al pasar el mouse */
-        }
-        /* Efecto al pasar el mouse sobre un elemento de la lista */
-        .programs-list li:hover {
-            transform: translateY(-1px); /* Eleva ligeramente el elemento al pasar el mouse */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave al pasar el mouse */
-        }
         /* Media query para pantallas medianas (hasta 1200px) */
         @media (max-width: 1200px) {
         .brand-name {
             font-size: 1.75rem; /* Tamaño de fuente ligeramente menor */
             }
         }
+
         /* Media query para pantallas pequeñas (hasta 768px) */
-        @media (max-width: 768px) {
-        .brand-name {
-            font-size: 1.5rem; /* Tamaño de fuente aún menor para pantallas móviles */
+        @media screen and (max-width: 768px) {
+        .dropdown {
+            display: block; /* Asegura que los menús se adapten a móviles */
+            width: 100%;
             }
-        }
-        /* Media query para pantallas muy pequeñas (hasta 480px) */
-        @media (max-width: 480px) {
+
+        .dropdown-content {
+            position: static; /* Evita el desfase en móviles */
+            width: 100%; /* Ocupar el ancho completo */
+            max-height: 300px; /* Limita el tamaño en móviles */
+            overflow-y: auto; /* Agrega scroll si es necesario */
+            text-align: center; /* Centra los elementos */
+            }
+
+        .dropdown-content a {
+            font-size: 1rem; /* Aumenta un poco el tamaño en móviles */
+            padding: 12px 15px; /* Más espacio para tocar con el dedo */
+            }
+
+        .university-menu {
+            position: static;
+            max-height: 300px;
+            overflow-y: auto;
+            width: 100%;
+            }
+
+        .nav-bar {
+            flex-direction: column; /* Asegura que la barra de navegación se ajuste bien */
+            text-align: center;
+            }
+
         .brand-name {
-            font-size: 1.2rem; /* Tamaño aún más pequeño en pantallas muy reducidas */
+            font-size: 1.5rem; /* Reduce el tamaño del logo y nombre */
+            }
+
+        .nav-bar img.logo-experience {
+            height: 50px; /* Ajusta el tamaño del logo en móviles */
             }
         }
         /* Estilos para las secciones */

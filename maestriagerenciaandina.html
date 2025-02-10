@@ -242,10 +242,13 @@ header h3 {
             transform: scaleX(1); /* El pseudo-elemento se expande horizontalmente al 100% */
             transform-origin: left; /* La expansión comienza desde el borde izquierdo */
         }
+        
         .nav-bar img.logo-experience {
             height: 60px; /* Ajusta la altura del logo aquí */
+            object-fit: contain; /* Evita distorsión */
             width: auto; /* Mantiene la relación de aspecto */
             margin-right: 15px; /* Espaciado entre el logo y el texto */
+            display: block; /* Asegura que no haya problemas de alineación */
         }
         .brand-name {
             font-family: 'Germania One', sans-serif; /* Aplica Germania a la clase brand-name */

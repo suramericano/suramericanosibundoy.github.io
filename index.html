@@ -113,34 +113,43 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
         }
-        /* Estilos para pantallas de hasta 768px (dispositivos móviles) */
-        @media (max-width: 768px) {
-        .nav-bar {
-            flex-direction: column; /* Cambia la dirección a columna para pantallas más pequeñas */
-            padding: 10px 0; /* Aumenta el padding para mejorar el área táctil */
-        }
+        /* Estilos para pantallas de hasta 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column; /* Coloca los elementos en columna */
+        padding: 12px 0; /* Ajuste de padding */
+        gap: 8px; /* Espaciado uniforme */
+        min-height: 60px; /* Altura mínima para mejor accesibilidad */
+    }
 
-        .nav-bar a {
-            font-size: 0.9rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
-            padding: 12px 20px; /* Aumenta el espaciado para mejorar la usabilidad */
-            margin: 5px 0; /* Espacio vertical entre los enlaces */
-            width: 100%; /* Asegura que los enlaces ocupen el ancho completo */
-            text-align: center; /* Centra el texto en los enlaces */
-            }
-        }
+    .nav-bar a {
+        font-size: clamp(0.9rem, 2vw, 1rem); /* Ajusta el tamaño según la pantalla */
+        padding: 14px 18px; /* Espaciado mejorado */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center;
+        transition: background 0.3s ease-in-out; /* Transición suave */
+    }
 
-        /* Estilos para pantallas de hasta 480px (smartphones) */
-        @media (max-width: 480px) {
-        .nav-bar {
-            padding: 15px 0; /* Más espacio para facilitar la interacción táctil */
-            }
+    .nav-bar a:hover,
+    .nav-bar a:focus {
+        background-color: rgba(255, 255, 255, 0.1); /* Efecto visual al tocar */
+    }
+}
 
-        .nav-bar a {
-            font-size: 0.8rem; /* Reduce aún más el tamaño de fuente */
-            padding: 15px 25px; /* Aumenta el espaciado para mayor comodidad */
-            margin: 8px 0; /* Espacio vertical más amplio entre los enlaces */
-            }
-        }
+/* Estilos para pantallas de hasta 480px (smartphones pequeños) */
+@media (max-width: 480px) {
+    .nav-bar {
+        padding: 16px 0; /* Mayor área de interacción */
+        gap: 10px;
+    }
+
+    .nav-bar a {
+        font-size: clamp(0.8rem, 3vw, 0.9rem); /* Adaptabilidad */
+        padding: 16px 20px; /* Espaciado táctil óptimo */
+        margin: 6px 0; /* Espacio uniforme */
+    }
+}
+
         /* Estilos del menú desplegable */
         .dropdown {
             position: relative;
@@ -255,10 +264,13 @@
             transform: scaleX(1); /* El pseudo-elemento se expande horizontalmente al 100% */
             transform-origin: left; /* La expansión comienza desde el borde izquierdo */
         }
+        
         .nav-bar img.logo-experience {
             height: 60px; /* Ajusta la altura del logo aquí */
+            object-fit: contain; /* Evita distorsión */
             width: auto; /* Mantiene la relación de aspecto */
             margin-right: 15px; /* Espaciado entre el logo y el texto */
+            display: block; /* Asegura que no haya problemas de alineación */
         }
         .brand-name {
             font-family: 'Germania One', sans-serif; /* Aplica Germania a la clase brand-name */
@@ -349,16 +361,43 @@
         }
 
         /* Media query para pantallas pequeñas (hasta 768px) */
-        @media (max-width: 768px) {
-        .brand-name {
-            font-size: 1.5rem; /* Tamaño de fuente aún menor para pantallas móviles */
+        @media screen and (max-width: 768px) {
+        .dropdown {
+            display: block; /* Asegura que los menús se adapten a móviles */
+            width: 100%;
             }
-        }
 
-        /* Media query para pantallas muy pequeñas (hasta 480px) */
-        @media (max-width: 480px) {
+        .dropdown-content {
+            position: static; /* Evita el desfase en móviles */
+            width: 100%; /* Ocupar el ancho completo */
+            max-height: 300px; /* Limita el tamaño en móviles */
+            overflow-y: auto; /* Agrega scroll si es necesario */
+            text-align: center; /* Centra los elementos */
+            }
+
+        .dropdown-content a {
+            font-size: 1rem; /* Aumenta un poco el tamaño en móviles */
+            padding: 12px 15px; /* Más espacio para tocar con el dedo */
+            }
+
+        .university-menu {
+            position: static;
+            max-height: 300px;
+            overflow-y: auto;
+            width: 100%;
+            }
+
+        .nav-bar {
+            flex-direction: column; /* Asegura que la barra de navegación se ajuste bien */
+            text-align: center;
+            }
+
         .brand-name {
-            font-size: 1.2rem; /* Tamaño aún más pequeño en pantallas muy reducidas */
+            font-size: 1.5rem; /* Reduce el tamaño del logo y nombre */
+            }
+
+        .nav-bar img.logo-experience {
+            height: 50px; /* Ajusta el tamaño del logo en móviles */
             }
         }
 
@@ -557,6 +596,25 @@
         }
         .telefono a:hover {
             color: #c8c500; /* Color cuando el cursor pasa encima */
+        }
+        /* 📱 Estilos específicos para móviles */
+        @media (max-width: 768px) {
+            .social-media {
+                display: flex;
+                justify-content: center;
+                gap: 10px; /* Espaciado entre iconos */
+                flex-wrap: wrap; /* Permite que los íconos se ajusten en varias líneas si es necesario */
+            }
+
+            .social-media a {
+                font-size: 1.2rem; /* Reduce el tamaño de los iconos */
+                padding: 12px; /* Espacio más compacto */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .telefono a {
+                font-size: 0.9rem; /* Ajusta el tamaño del texto */
+            }
         }
         /* Estilos para los horarios */
         /* Estilos para la barra horizontal de horarios */
@@ -757,12 +815,68 @@
         }
 
 
-        /* Adaptaciones responsivas */
+        /* Adaptaciones responsivas celular*/
         @media (max-width: 768px) {
-        .contact-popup {
-            max-width: 90%; /* Ancho máximo para dispositivos móviles */
+            .contact-popup {
+                max-width: 90%; /* Ancho máximo para dispositivos móviles */
+                padding: 20px;
+            }
+
+            .contact-popup h2 {
+                font-size: 20px;
+            }
+
+            .contact-popup p {
+                font-size: 16px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button-group button {
+                width: 100%;
+                padding: 10px;
             }
         }
+
+        /* Responsividad para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .contact-popup {
+                width: 95%;
+                padding: 15px;
+                box-shadow: none; /* Elimina sombras para mejor visualización en móviles */
+            }
+
+            .contact-popup h2 {
+                font-size: 18px;
+            }
+
+            .contact-popup p {
+                font-size: 14px;
+                line-height: 1.4; /* Mejora la legibilidad */
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button-group button {
+                width: 100%;
+                margin: 5px 0;
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .close-button {
+                top: 10px;
+                right: 10px;
+                font-size: 16px;
+            }
+        }
+        
         /* Sección de Búsqueda para Tarjetas */        
         #busqueda {
             margin: 20px auto; /* Alinear el contenedor al centro */
@@ -1149,6 +1263,22 @@
         }
         /* Fin Carrusel */
 
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 768px) {
+        .carousel-caption {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+        .carousel-caption h2 {
+                font-size: 18px;
+            }
+
+        .btn-custom {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
     </style>
 </head>
 <body>

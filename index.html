@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
      <title>Centro de Estudios Suramericano</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">  
+    <title>Carrusel Ejecutivo Mejorado</title>      
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Reset y estilos generales */
         * {
@@ -28,56 +30,56 @@
             overflow-x: hidden;
         }
         /* Estilos para el encabezado */
-header {
-    background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
-    color: #f8f8f8; /* Blanco brillante para mayor claridad */
-    padding: 30px 0; /* Espaciado amplio */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda para mayor impacto */
-    text-align: center;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa sutil */
-}
+        header {
+            background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+            color: #f8f8f8; /* Blanco brillante para mayor claridad */
+            padding: 30px 0; /* Espaciado amplio */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda para mayor impacto */
+            text-align: center;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa sutil */
+        }
 
-/* Estilos para el título */
-header h1 {
-    font-size: 3rem; /* Tamaño de fuente destacado */
-    margin: 0;
-    font-family: 'Playfair Display', serif; /* Fuente elegante */
-    font-weight: 800; /* Negrita para mayor presencia */
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Espaciado para dar un toque de distinción */
-    color: #ffcc33; /* Dorado suave para contraste con el azul */
-}
+        /* Estilos para el título */
+        header h1 {
+            font-size: 3rem; /* Tamaño de fuente destacado */
+            margin: 0;
+            font-family: 'Playfair Display', serif; /* Fuente elegante */
+            font-weight: 800; /* Negrita para mayor presencia */
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Espaciado para dar un toque de distinción */
+            color: #ffcc33; /* Dorado suave para contraste con el azul */
+        }
 
-/* Estilos para el subtítulo */
-header h3 {
-    font-size: 1.4rem; /* Tamaño de fuente del subtítulo */
-    font-style: italic; /* Estilo cursivo */
-    margin-top: 10px; /* Espaciado superior */
-    font-family: 'Lora', serif; /* Fuente serif para elegancia */
-    color: #d9d9d9; /* Gris claro para suavidad y armonía con el fondo */
-}
+        /* Estilos para el subtítulo */
+        header h3 {
+            font-size: 1.4rem; /* Tamaño de fuente del subtítulo */
+            font-style: italic; /* Estilo cursivo */
+            margin-top: 10px; /* Espaciado superior */
+            font-family: 'Lora', serif; /* Fuente serif para elegancia */
+            color: #d9d9d9; /* Gris claro para suavidad y armonía con el fondo */
+        }
 
-/* Estilos para el logo */
-.logo {
-    max-width: 160px; /* Ajuste del tamaño de la imagen */
-    height: auto; /* Altura automática para mantener proporciones */
-    margin-bottom: 15px; /* Espaciado inferior */
-    border-radius: 50%; /* Bordes redondeados */
-    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
-    background: rgba(255, 255, 255, 0.1); /* Fondo sutil para darle un toque moderno */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el logo */
-}
+        /* Estilos para el logo */
+        .logo {
+            max-width: 160px; /* Ajuste del tamaño de la imagen */
+            height: auto; /* Altura automática para mantener proporciones */
+            margin-bottom: 15px; /* Espaciado inferior */
+            border-radius: 50%; /* Bordes redondeados */
+            border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
+            background: rgba(255, 255, 255, 0.1); /* Fondo sutil para darle un toque moderno */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el logo */
+        }
 
-/* Efecto hover para el logo */
-.logo:hover {
-    transform: scale(1.1); /* Aumento ligero en el tamaño al pasar el mouse */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda para dar un efecto de elevación */
-}
+        /* Efecto hover para el logo */
+        .logo:hover {
+            transform: scale(1.1); /* Aumento ligero en el tamaño al pasar el mouse */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda para dar un efecto de elevación */
+        }
 
 
         /* Estilos para las barras de navegación */
@@ -475,22 +477,38 @@ header h3 {
                 padding: 10px; /* Menos espaciado en dispositivos móviles */
             }
         }
-
+        
         /* Estilos para el pie de página */
-        footer {
-            background-color: #003366;
-            color: white;
-            padding: 20px 0;
+        .footer {
+            width: 100%;
+            background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+            color: #f8f8f8; /* Blanco brillante para mejor contraste */
             text-align: center;
-            margin-top: 40px;
+            padding: 30px 0;
+            box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+            border-top: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa */
         }
-        footer p {
-            margin: 10px 0;
+
+        /* Texto del footer */
+        .footer p {
+            margin: 5px 0;
+            font-size: 1rem;
         }
-        footer img {
-            max-width: 80px;
-            margin-top: 10px;
+
+        /* Logo dentro del footer */
+        .footer-logo {
+            max-width: 100px;
+            margin: 15px 0;
+            filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3)); /* Efecto de sombra en el logo */
         }
+
+        /* Créditos o texto pequeño */
+        .creditos {
+            font-size: 0.85rem;
+            color: #dcdcdc; /* Gris claro para sutileza */
+            opacity: 0.8;
+        }
+        
         /* Estilos para la barra de redes sociales */
         .social-media {
             background-color: #004d99; /* Color de fondo de la barra */
@@ -746,290 +764,391 @@ header h3 {
             }
         }
         /* Sección de Búsqueda para Tarjetas */        
-#busqueda {
-    margin: 20px auto; /* Alinear el contenedor al centro */
-    text-align: center;
-}
+        #busqueda {
+            margin: 20px auto; /* Alinear el contenedor al centro */
+            text-align: center;
+        }
 
-#search-input {
-    width: 80%;
-    max-width: 400px; /* Limitar el ancho máximo del campo de búsqueda */
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #007bff; /* Cambiar a un color más distintivo */
-    border-radius: 25px; /* Bordes redondeados más suaves */
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Sombra sutil */
-    transition: box-shadow 0.2s, border-color 0.2s; /* Transiciones suaves */
-}
+        #search-input {
+            width: 80%;
+            max-width: 400px; /* Limitar el ancho máximo del campo de búsqueda */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #007bff; /* Cambiar a un color más distintivo */
+            border-radius: 25px; /* Bordes redondeados más suaves */
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Sombra sutil */
+            transition: box-shadow 0.2s, border-color 0.2s; /* Transiciones suaves */
+        }
 
-#search-input:focus {
-    border-color: #0056b3; /* Cambiar el color del borde al enfocar */
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Sombra más pronunciada al enfocar */
-}
+        #search-input:focus {
+            border-color: #0056b3; /* Cambiar el color del borde al enfocar */
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Sombra más pronunciada al enfocar */
+        }
 
-.program-list {
-    display: grid; /* Cambiar a grid para mejor control */
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
-    gap: 20px; /* Espacio entre tarjetas */
-    margin-top: 20px; /* Espacio superior para la lista de tarjetas */
-}
+        .program-list {
+            display: grid; /* Cambiar a grid para mejor control */
+            grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+            gap: 20px; /* Espacio entre tarjetas */
+            margin-top: 20px; /* Espacio superior para la lista de tarjetas */
+        }
 
-.program-card {
-    background: #ffffff; /* Fondo blanco para las tarjetas */
-    border: 1px solid #ddd;
-    border-radius: 12px; /* Bordes más redondeados */
-    padding: 20px; /* Aumentar el espaciado interno de las tarjetas */
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s; /* Agregar transición para la sombra */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    min-width: 250px; /* Ancho mínimo para tarjetas */
-    max-width: 300px; /* Ancho máximo para tarjetas */
-}
+        .program-card {
+            background: #ffffff; /* Fondo blanco para las tarjetas */
+            border: 1px solid #ddd;
+            border-radius: 12px; /* Bordes más redondeados */
+            padding: 20px; /* Aumentar el espaciado interno de las tarjetas */
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s; /* Agregar transición para la sombra */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            min-width: 250px; /* Ancho mínimo para tarjetas */
+            max-width: 300px; /* Ancho máximo para tarjetas */
+        }
 
-.program-card:hover {
-    transform: translateY(-5px); /* Elevar la tarjeta al pasar el mouse */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
-}
+        .program-card:hover {
+            transform: translateY(-5px); /* Elevar la tarjeta al pasar el mouse */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
 
-.program-card img {
-    width: 100%;
-    height: 150px; /* Altura de las imágenes */
-    object-fit: cover; /* Mantener la proporción de la imagen */
-    border-radius: 8px; /* Bordes de la imagen más redondeados */
-}
+        .program-card img {
+            width: 100%;
+            height: 150px; /* Altura de las imágenes */
+            object-fit: cover; /* Mantener la proporción de la imagen */
+            border-radius: 8px; /* Bordes de la imagen más redondeados */
+        }
 
-.program-card h3 {
-    font-size: 22px; /* Tamaño del título aumentado */
-    margin: 15px 0; /* Espaciado superior e inferior */
-    color: #333; /* Color del texto */
-}
+        .program-card h3 {
+            font-size: 22px; /* Tamaño del título aumentado */
+            margin: 15px 0; /* Espaciado superior e inferior */
+            color: #333; /* Color del texto */
+        }
 
-.program-card p {
-    font-size: 18px; /* Aumentar el tamaño del texto */
-    color: #555;
-}
+        .program-card p {
+            font-size: 18px; /* Aumentar el tamaño del texto */
+            color: #555;
+        }
 
-.program-card a {
-    display: inline-block;
-    margin-top: auto; /* Asegura que el enlace se empuje hacia abajo en el contenedor */
-    padding: 10px 20px; /* Aumentar el padding del botón */
-    background: #007bff; /* Color del botón */
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s; /* Transición para el fondo y el movimiento */
-}
+        .program-card a {
+            display: inline-block;
+            margin-top: auto; /* Asegura que el enlace se empuje hacia abajo en el contenedor */
+            padding: 10px 20px; /* Aumentar el padding del botón */
+            background: #007bff; /* Color del botón */
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s; /* Transición para el fondo y el movimiento */
+        }
 
-.program-card a:hover {
-    background: #0056b3; /* Color al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
-}
-    /* Sección de Búsqueda para Tarjetas Nuevo */  
-    #searchInput {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        .program-card a:hover {
+            background: #0056b3; /* Color al pasar el mouse */
+            transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+        }
+            /* Sección de Búsqueda para Tarjetas Nuevo */  
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-.program-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre tarjetas */
-}
+        .program-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre tarjetas */
+        }
 
-.program-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    flex: 1 0 200px; /* Ajusta el tamaño de las tarjetas */
-} 
+        .program-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            flex: 1 0 200px; /* Ajusta el tamaño de las tarjetas */
+        } 
 
-/* Banner Modalidad Virtual Publicidad */
+        /* Banner Modalidad Virtual Publicidad */
 
-/* Tarjeta contenedora general */
-.features-container {
-    background-color: #003d73;  /* Fondo azul oscuro para la tarjeta contenedora */
-    border-radius: 15px;  /* Bordes ligeramente más pequeños */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Sombra más ligera para resaltar la tarjeta */
-    padding: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Aumentar el mínimo de cada columna a 280px */
-    gap: 0.5rem;  /* Espacio entre las tarjetas */
-    max-width: 1200px;  /* Aumentar el ancho máximo para que la tarjeta sea más ancha */
-    margin: 0 auto;
-    overflow: visible;  /* Permitir desbordamiento si es necesario */
-}
+        /* Tarjeta contenedora general */
+        .features-container {
+            background-color: #003d73;  /* Fondo azul oscuro para la tarjeta contenedora */
+            border-radius: 15px;  /* Bordes ligeramente más pequeños */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Sombra más ligera para resaltar la tarjeta */
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Aumentar el mínimo de cada columna a 280px */
+            gap: 0.5rem;  /* Espacio entre las tarjetas */
+            max-width: 1200px;  /* Aumentar el ancho máximo para que la tarjeta sea más ancha */
+            margin: 0 auto;
+            overflow: visible;  /* Permitir desbordamiento si es necesario */
+        }
 
-/* Ajuste para eliminar el espacio excesivo */
-.features-container {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
+        /* Ajuste para eliminar el espacio excesivo */
+        .features-container {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
 
-/* Ajustes de la tarjeta para que ocupe más espacio */
-.feature-card {
-    background-color: #2c5a8e;  /* Fondo azul suave y sofisticado para las tarjetas */
-    color: #fff;  /* Texto blanco */
-    padding: 15px;  /* Reducir padding dentro de las tarjetas */
-    border-radius: 10px;  /* Bordes más suaves */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;  /* Efectos de hover */
-    will-change: transform;
-    width: 100%;  /* Asegura que la tarjeta ocupe todo el ancho posible */
-    box-sizing: border-box;  /* Asegurarse de que el padding no afecte el ancho */
-    font-size: 14px;  /* Reducir tamaño de fuente */
-    text-align: center;
-    display: block;  /* Cambiar de flex a block */
-}
+        /* Ajustes de la tarjeta para que ocupe más espacio */
+        .feature-card {
+            background-color: #2c5a8e;  /* Fondo azul suave y sofisticado para las tarjetas */
+            color: #fff;  /* Texto blanco */
+            padding: 15px;  /* Reducir padding dentro de las tarjetas */
+            border-radius: 10px;  /* Bordes más suaves */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;  /* Efectos de hover */
+            will-change: transform;
+            width: 100%;  /* Asegura que la tarjeta ocupe todo el ancho posible */
+            box-sizing: border-box;  /* Asegurarse de que el padding no afecte el ancho */
+            font-size: 14px;  /* Reducir tamaño de fuente */
+            text-align: center;
+            display: block;  /* Cambiar de flex a block */
+        }
 
-/* Efecto hover para las tarjetas */
-.feature-card:hover {
-    transform: translateY(-4px);  /* Menos desplazamiento en hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Sombra un poco más pronunciada */
-    background-color: #7fb1d7;  /* Cambio de color de fondo */
-    opacity: 0.9;  /* Ligera transparencia */
-}
+        /* Efecto hover para las tarjetas */
+        .feature-card:hover {
+            transform: translateY(-4px);  /* Menos desplazamiento en hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Sombra un poco más pronunciada */
+            background-color: #7fb1d7;  /* Cambio de color de fondo */
+            opacity: 0.9;  /* Ligera transparencia */
+        }
 
-/* Estilos para los iconos dentro de las tarjetas */
-.feature-card .icon {
-    font-size: 2rem;  /* Ajustar tamaño del icono */
-    color: #fff;
-    margin-bottom: 0.8rem;  /* Reducir espacio debajo del icono */
-    transition: color 0.3s ease;
-}
+        /* Estilos para los iconos dentro de las tarjetas */
+        .feature-card .icon {
+            font-size: 2rem;  /* Ajustar tamaño del icono */
+            color: #fff;
+            margin-bottom: 0.8rem;  /* Reducir espacio debajo del icono */
+            transition: color 0.3s ease;
+        }
 
-/* Efecto de color en los iconos cuando se pasa el ratón */
-.feature-card:hover .icon {
-    color: #eaf0f8;  /* Cambio de color en hover */
-}
+        /* Efecto de color en los iconos cuando se pasa el ratón */
+        .feature-card:hover .icon {
+            color: #eaf0f8;  /* Cambio de color en hover */
+        }
 
-/* Títulos dentro de las tarjetas */
-.feature-card h3 {
-    font-size: 16px;  /* Ajustar tamaño de fuente del título */
-    margin: 4px 0;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;  /* Reducir el espaciado entre letras */
-}
+        /* Títulos dentro de las tarjetas */
+        .feature-card h3 {
+            font-size: 16px;  /* Ajustar tamaño de fuente del título */
+            margin: 4px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;  /* Reducir el espaciado entre letras */
+        }
 
-/* Descripción dentro de las tarjetas */
-.feature-card p {
-    font-size: 14px;  /* Reducir tamaño de fuente del párrafo */
-    margin: 0;
-    opacity: 0.8;  /* Ligera transparencia en el texto */
-    font-style: italic;  /* Cursiva para un toque elegante */
-}
+        /* Descripción dentro de las tarjetas */
+        .feature-card p {
+            font-size: 14px;  /* Reducir tamaño de fuente del párrafo */
+            margin: 0;
+            opacity: 0.8;  /* Ligera transparencia en el texto */
+            font-style: italic;  /* Cursiva para un toque elegante */
+        }
 
-/* Efecto hover para los párrafos */
-.feature-card:hover p {
-    opacity: 1;  /* Hace el texto completamente visible en hover */
-}
+        /* Efecto hover para los párrafos */
+        .feature-card:hover p {
+            opacity: 1;  /* Hace el texto completamente visible en hover */
+        }
 
+        /* Estilo para la sección de Universidades en Alianza */
 
+        .universidades-alianza {
+            padding: 40px 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s ease-out; /* Animación para la sección */
+        }
 
-/* Estilo para la sección de Universidades en Alianza */
+        /* Estilos para la tarjeta */
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 30px;
+            width: 100%;
+            max-width: 1200px; /* Ancho máximo de la tarjeta */
+            margin: 0 auto; /* Centrado horizontal */
+            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Efecto de hover para la tarjeta */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.8s forwards; /* Animación de entrada */
+        }
 
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+            transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
+        }
 
-.universidades-alianza {
-    padding: 40px 0;
-    background-color: #f4f4f4;
-    animation: fadeIn 1s ease-out; /* Animación para la sección */
-}
+        /* Animación para hacer aparecer la tarjeta */
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Estilos para la tarjeta */
-.card {
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 30px;
-    width: 100%;
-    max-width: 1200px; /* Ancho máximo de la tarjeta */
-    margin: 0 auto; /* Centrado horizontal */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Efecto de hover para la tarjeta */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 0.8s forwards; /* Animación de entrada */
-}
+        /* Animación para la entrada de la sección */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
-    transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
-}
+        /* Contenedor interno de la tarjeta */
+        .card .container {
+            text-align: center; /* Centrado de todo el contenido solo dentro de la tarjeta */
+        }
 
-/* Animación para hacer aparecer la tarjeta */
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Estilo para el título */
+        h1 {
+            font-size: 2.4em; /* Ajuste del tamaño de fuente */
+            color: #003366; /* Color oscuro para el título */
+            font-weight: 600; /* Negrita */
+            margin-bottom: 10px;
+            letter-spacing: 1px; /* Espaciado entre letras */
+        }
 
-/* Animación para la entrada de la sección */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        /* Estilo para los subtítulos */
+        /* Subtítulo primario (NACIONALES) */
+        .primary-subtitle {
+            font-size: 1.5em; /* Tamaño más grande */
+            font-weight: bold; /* Negrita */
+            color: #ff6600; /* Color naranja */
+            margin: 5px 0;
+            text-transform: uppercase; /* Todo en mayúsculas */
+            letter-spacing: 1px; /* Espaciado entre letras */
+        }
 
-/* Contenedor interno de la tarjeta */
-.card .container {
-    text-align: center; /* Centrado de todo el contenido solo dentro de la tarjeta */
-}
+        /* Subtítulo secundario (información adicional) */
+        .secondary-subtitle {
+            font-size: 1.2em; /* Tamaño más pequeño */
+            color: #666666; /* Color más suave para el texto secundario */
+            margin-top: 5px; /* Espaciado adicional entre los subtítulos */
+            font-weight: 400; /* Peso normal */
+            text-transform: none; /* Quitar la transformación a mayúsculas para mostrar en minúsculas */
+            letter-spacing: 1px; /* Espaciado entre letras */
+        }
 
-/* Estilo para el título */
-h1 {
-    font-size: 2.4em; /* Ajuste del tamaño de fuente */
-    color: #003366; /* Color oscuro para el título */
-    font-weight: 600; /* Negrita */
-    margin-bottom: 10px;
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
+        /* Estilo para los logotipos */
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
 
-/* Estilo para los subtítulos */
-/* Subtítulo primario (NACIONALES) */
-.primary-subtitle {
-    font-size: 1.5em; /* Tamaño más grande */
-    font-weight: bold; /* Negrita */
-    color: #ff6600; /* Color naranja */
-    margin: 5px 0;
-    text-transform: uppercase; /* Todo en mayúsculas */
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
+        .logos img {
+            height: 100px; /* Aumentado el tamaño de los logotipos */
+            transition: transform 0.3s;
+        }
 
-/* Subtítulo secundario (información adicional) */
-.secondary-subtitle {
-    font-size: 1.2em; /* Tamaño más pequeño */
-    color: #666666; /* Color más suave para el texto secundario */
-    margin-top: 5px; /* Espaciado adicional entre los subtítulos */
-    font-weight: 400; /* Peso normal */
-    text-transform: none; /* Quitar la transformación a mayúsculas para mostrar en minúsculas */
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
+        .logos img:hover {
+            transform: scale(1.1); /* Aumento de tamaño al hacer hover */
+        }
 
-/* Estilo para los logotipos */
-.logos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
+        /* Estilos del Carrusel: Imágenes, Texto, Botones y Atribución */
 
-.logos img {
-    height: 100px; /* Aumentado el tamaño de los logotipos */
-    transition: transform 0.3s;
-}
+        /* Ajustar altura del carrusel */
+        .carousel-item {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.logos img:hover {
-    transform: scale(1.1); /* Aumento de tamaño al hacer hover */
-}
+        /* Imágenes del carrusel */
+        .carousel-item img {
+            width: auto; /* Permite que la imagen mantenga su tamaño natural */
+            max-width: 100%; /* Asegura que no sea más ancha que el contenedor */
+            height: 450px; /* Reduce la altura para que no se vea gigante */
+            object-fit: contain; /* Evita que la imagen se recorte, ajustándola dentro del espacio */
+            margin: auto; /* Centra la imagen dentro del carrusel */
+            display: block; /* Evita problemas de alineación */
+        }
+
+        /* Diseño del texto con fondo translúcido */
+        .carousel-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background: rgba(0, 51, 102, 0.7); /* Azul oscuro translúcido */
+            padding: 15px;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        .carousel-caption h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FFC107; /* Amarillo dorado */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra para mejorar legibilidad */
+        }
+
+        .carousel-caption p {
+            font-size: 20px;
+            color: #FFFFFF; /* Blanco puro */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Botón personalizado */
+        .btn-custom {
+            background-color: #ffc107;
+            color: black;
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #ff9800;
+            transform: scale(1.1);
+        }
+
+        /* Estilos en botones de navegación */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10%; /* Reducimos el tamaño para evitar interferencia */
+            pointer-events: none; /* Evita que el área grande intercepte clics */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 20px;
+            pointer-events: auto; /* Permite clics solo en el icono */
+        }
+        
+        .carousel-inner {
+            background: url('imagenes/0fondobanner.png') center center/cover no-repeat;
+            position: relative;
+        }
+        /* Estilos ubicacion de atribucion a freepik */
+        .attribution {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+        }
+
+        .attribution a {
+            color: #ffcc33;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .attribution a:hover {
+            text-decoration: underline;
+        }
+        /* Fin Carrusel */
+
     </style>
 </head>
 <body>
@@ -1174,19 +1293,85 @@ h1 {
                     <p>Constante</p>
                 </div>
             </div>
-        </section>    
-                    
-        <section class="section" id="programas">
-            <h2>Programas Académicos</h2>
-            
+        </section> 
+                            
+        <section class="section" id="oportunidades-academicas">
+            <h2>Oportunidades Académicas</h2>
+            <p class="intro-text">
+                Explora nuestras oportunidades académicas y encuentra el camino ideal para tu futuro.  
+                Elige entre programas de pregrado, especialización y maestría diseñados para potenciar tu éxito.  
+            </p>
     <aside class="sidebar">
-        <h2>Información Adicional</h2>
-        <p>Aquí puedes incluir información relevante, enlaces o anuncios.</p>
-        <ul>
-            <li><a href="#">Enlace 1</a></li>
-            <li><a href="#">Enlace 2</a></li>
-            <li><a href="#">Enlace 3</a></li>
-        </ul>
+        <div id="carruselEjecutivo" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carruselEjecutivo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carruselEjecutivo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carruselEjecutivo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#carruselEjecutivo" data-bs-slide-to="3"></button>
+            </div>
+        
+            <div class="carousel-inner">
+                <!-- Slide 1 - Presentación -->
+                <div class="carousel-item active">
+                    <div class="attribution">
+                        Diseñado por <a href="https://www.freepik.es" target="_blank">Freepik</a>
+                    </div>
+                    <img src="imagenes/1estudiantesonriente.png" alt="Estudiantes felices">
+                    <div class="carousel-caption">
+                        <h2>"Las oportunidades están ahí, ¡hazlas tuyas!"</h2>
+                        <p>El Centro de Estudios Suramericano te abre las puertas a un futuro brillante. Educación de alta calidad y asesoramiento personalizado.</p>
+                        <a href="nosotros.html" class="btn btn-custom">¿Quiénes Somos?</a>
+                    </div>
+                </div>
+            
+                <!-- Slide 2 - Pregrado Derecho -->
+                <div class="carousel-item">
+                    <div class="attribution">
+                        Diseñado por <a href="https://www.freepik.es" target="_blank">Freepik</a>
+                    </div>
+                    <img src="imagenes/2estudiantelibro.png" alt="Estudiante con libro">
+                    <div class="carousel-caption">
+                        <h2>"Construye un futuro sólido con una carrera de impacto"</h2>
+                        <p><strong>⚖️ Derecho:</strong> Defiende la justicia, protege derechos y cambia el mundo. Conviértete en un líder con una formación integral.</p>
+                        <a href="derechoandina.html" class="btn btn-custom">Explora el Programa</a>
+                    </div>
+                </div>
+            
+                <!-- Slide 3 - Especialización en Alta Gerencia -->
+                <div class="carousel-item">
+                    <div class="attribution">
+                        Diseñado por <a href="https://www.freepik.es" target="_blank">Freepik</a>
+                    </div>
+                    <img src="imagenes/3estudiantecaminando.png" alt="Profesional en camino al éxito">
+                    <div class="carousel-caption">
+                        <h2>"Especialízate y lidera con visión estratégica"</h2>
+                        <p><strong>💼 Alta Gerencia:</strong> Dirige empresas con innovación y liderazgo. Aprende a tomar decisiones clave y destaca en un mundo competitivo.</p>
+                        <a href="espaltagerenciaandina.html" class="btn btn-custom">Explora el Programa</a>
+                    </div>
+                </div>
+            
+                <!-- Slide 4 - Maestría en Innovación -->
+                <div class="carousel-item">
+                    <div class="attribution">
+                        Diseñado por <a href="https://www.freepik.es" target="_blank">Freepik</a>
+                    </div>
+                    <img src="imagenes/4estudiantetrabaja.png" alt="Estudiante innovando">
+                    <div class="carousel-caption">
+                        <h2>"Conocimiento avanzado para transformar el mundo"</h2>
+                        <p><strong>🚀 Maestría en Innovación:</strong> Sé el motor del cambio. Aprende a desarrollar soluciones disruptivas y lidera la transformación.</p>
+                        <a href="maestriainnovacionandina.html" class="btn btn-custom">Explora el Programa</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselEjecutivo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselEjecutivo" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
     </aside>
 
     <section class="main-section" id="programas">
@@ -1657,12 +1842,16 @@ h1 {
     </div>
 </form>
 
-<footer>
+<footer class="footer">
     <p>&copy; 2024 Centro de Estudios Suramericano. Todos los derechos reservados.</p>
-    <p>Dirección: Barrio el cedro Cra 22 n 16-20, Sibundoy, Putumayo, Colombia</p>
-    <img src="Imagenes/logo.png" alt="Logo Footer">
-    <p style="margin-top: 10px; font-size: 0.9em; color: #cccccc;" class="creditos"></p>
+    <p>Dirección: Barrio El Cedro, Cra 22 n 16-20, Sibundoy, Putumayo, Colombia</p>
+    <img src="Imagenes/logo.png" alt="Logo Footer" class="footer-logo">
+    <p class="creditos">Desarrollado por Centro de Estudios Suramericano</p>
 </footer>
+
+
+<!-- Carga la librería de Bootstrap 5.3 para habilitar componentes interactivos como menús, modales y carruseles -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     // Mostrar el formulario automáticamente
@@ -1775,7 +1964,7 @@ h1 {
     function openForm() {
     document.getElementById('contactForm').style.display = 'block';
     }
- 
-    </script>
+     
+</script>
 </body>
 </html>

@@ -24,53 +24,53 @@
             overflow-x: hidden;
         }
         /* Estilos para el encabezado */
-header {
-    background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
-    color: #f8f8f8; /* Blanco brillante para mayor claridad */
-    padding: 30px 0; /* Espaciado amplio */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda para mayor impacto */
-    text-align: center;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa sutil */
-}
+        header {
+            background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+            color: #f8f8f8; /* Blanco brillante para mayor claridad */
+            padding: 30px 0; /* Espaciado amplio */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda para mayor impacto */
+            text-align: center;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa sutil */
+        }
 
-/* Estilos para el título */
-header h1 {
-    font-size: 3rem; /* Tamaño de fuente destacado */
-    margin: 0;
-    font-family: 'Playfair Display', serif; /* Fuente elegante */
-    font-weight: 800; /* Negrita para mayor presencia */
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Espaciado para dar un toque de distinción */
-    color: #ffcc33; /* Dorado suave para contraste con el azul */
-}
-/* Estilos para el subtítulo */
-header h3 {
-    font-size: 1.4rem; /* Tamaño de fuente del subtítulo */
-    font-style: italic; /* Estilo cursivo */
-    margin-top: 10px; /* Espaciado superior */
-    font-family: 'Lora', serif; /* Fuente serif para elegancia */
-    color: #d9d9d9; /* Gris claro para suavidad y armonía con el fondo */
-}
-/* Estilos para el logo */
-.logo {
-    max-width: 160px; /* Ajuste del tamaño de la imagen */
-    height: auto; /* Altura automática para mantener proporciones */
-    margin-bottom: 15px; /* Espaciado inferior */
-    border-radius: 50%; /* Bordes redondeados */
-    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
-    background: rgba(255, 255, 255, 0.1); /* Fondo sutil para darle un toque moderno */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el logo */
-}
-/* Efecto hover para el logo */
-.logo:hover {
-    transform: scale(1.1); /* Aumento ligero en el tamaño al pasar el mouse */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda para dar un efecto de elevación */
-}
+        /* Estilos para el título */
+        header h1 {
+            font-size: 3rem; /* Tamaño de fuente destacado */
+            margin: 0;
+            font-family: 'Playfair Display', serif; /* Fuente elegante */
+            font-weight: 800; /* Negrita para mayor presencia */
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Espaciado para dar un toque de distinción */
+            color: #ffcc33; /* Dorado suave para contraste con el azul */
+        }
+        /* Estilos para el subtítulo */
+        header h3 {
+            font-size: 1.4rem; /* Tamaño de fuente del subtítulo */
+            font-style: italic; /* Estilo cursivo */
+            margin-top: 10px; /* Espaciado superior */
+            font-family: 'Lora', serif; /* Fuente serif para elegancia */
+            color: #d9d9d9; /* Gris claro para suavidad y armonía con el fondo */
+        }
+        /* Estilos para el logo */
+        .logo {
+            max-width: 160px; /* Ajuste del tamaño de la imagen */
+            height: auto; /* Altura automática para mantener proporciones */
+            margin-bottom: 15px; /* Espaciado inferior */
+            border-radius: 50%; /* Bordes redondeados */
+            border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
+            background: rgba(255, 255, 255, 0.1); /* Fondo sutil para darle un toque moderno */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el logo */
+        }
+        /* Efecto hover para el logo */
+        .logo:hover {
+            transform: scale(1.1); /* Aumento ligero en el tamaño al pasar el mouse */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda para dar un efecto de elevación */
+        }
         /* Estilos para las barras de navegación */
         .nav-bar {
             display: flex;
@@ -102,32 +102,87 @@ header h3 {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
         }
-        /* Estilos para pantallas de hasta 768px (dispositivos móviles) */
+        
+        /* Estilos para pantallas de hasta 768px (tablets y móviles) */
         @media (max-width: 768px) {
-        .nav-bar {
-            flex-direction: column; /* Cambia la dirección a columna para pantallas más pequeñas */
-            padding: 10px 0; /* Aumenta el padding para mejorar el área táctil */
+            .nav-bar {
+                flex-direction: column; /* Coloca los elementos en columna */
+                padding: 12px 0; /* Ajuste de padding */
+                gap: 8px; /* Espaciado uniforme */
+                min-height: 60px; /* Altura mínima para mejor accesibilidad */
+            }
+
+            .nav-bar a {
+                font-size: clamp(0.9rem, 2vw, 1rem); /* Ajusta el tamaño según la pantalla */
+                padding: 14px 18px; /* Espaciado mejorado */
+                width: 100%; /* Ocupa todo el ancho disponible */
+                text-align: center;
+                transition: background 0.3s ease-in-out; /* Transición suave */
+            }
+
+            .nav-bar a:hover,
+            .nav-bar a:focus {
+                background-color: rgba(255, 255, 255, 0.1); /* Efecto visual al tocar */
+            }
+
+            /* Reducir el tamaño del logotipo */
+            .logo img {
+                width: 120px; /* Ajustar el tamaño */
+                height: auto; /* Mantener proporciones */
+            }
         }
 
-        .nav-bar a {
-            font-size: 0.9rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
-            padding: 12px 20px; /* Aumenta el espaciado para mejorar la usabilidad */
-            margin: 5px 0; /* Espacio vertical entre los enlaces */
-            width: 100%; /* Asegura que los enlaces ocupen el ancho completo */
-            text-align: center; /* Centra el texto en los enlaces */
-            }
-        }
-        /* Estilos para pantallas de hasta 480px (smartphones) */
+        /* Estilos para pantallas de hasta 480px (smartphones pequeños) */
         @media (max-width: 480px) {
-        .nav-bar {
-            padding: 15px 0; /* Más espacio para facilitar la interacción táctil */
+            .nav-bar {
+                padding: 16px 0; /* Mayor área de interacción */
+                gap: 10px;
             }
-        .nav-bar a {
-            font-size: 0.8rem; /* Reduce aún más el tamaño de fuente */
-            padding: 15px 25px; /* Aumenta el espaciado para mayor comodidad */
-            margin: 8px 0; /* Espacio vertical más amplio entre los enlaces */
+
+            .nav-bar a {
+                font-size: clamp(0.8rem, 3vw, 0.9rem); /* Adaptabilidad */
+                padding: 16px 20px; /* Espaciado táctil óptimo */
+                margin: 6px 0; /* Espacio uniforme */
+            }
+
+        /* Reducir aún más el logotipo en móviles pequeños */
+            .logo img {
+                width: 90px; /* Tamaño menor para pantallas pequeñas */
+                }
+            }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem; /* Reducimos el tamaño del título */
+            }
+
+            header h3 {
+                font-size: 1.2rem; /* Ajustamos el subtítulo */
             }
         }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.6rem; /* Aún más pequeño en móviles pequeños */
+            }
+
+            header h3 {
+                font-size: 1rem; /* Ajustamos el subtítulo */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 120px; /* Tamaño reducido para tablets y móviles */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 90px; /* Tamaño aún menor para smartphones */
+            }
+        }
+
         /* Estilos del menú desplegable */
         .dropdown {
             position: relative;

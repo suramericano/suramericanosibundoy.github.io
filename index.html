@@ -518,35 +518,35 @@
         }
         
         /* Estilos para el pie de página */
-        .footer {
-            width: 100%;
-            background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
-            color: #f8f8f8; /* Blanco brillante para mejor contraste */
-            text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
-            border-top: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa */
-        }
+.footer {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+    color: #f8f8f8; /* Blanco brillante para mejor contraste */
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+    border-top: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa */
+}
 
-        /* Texto del footer */
-        .footer p {
-            margin: 5px 0;
-            font-size: 1rem;
-        }
+/* Texto del footer */
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
 
-        /* Logo dentro del footer */
-        .footer-logo {
-            max-width: 100px;
-            margin: 15px 0;
-            filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3)); /* Efecto de sombra en el logo */
-        }
+/* Logo dentro del footer */
+.footer-logo {
+    max-width: 100px;
+    margin: 15px 0;
+    filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3)); /* Efecto de sombra en el logo */
+}
 
-        /* Créditos o texto pequeño */
-        .creditos {
-            font-size: 0.85rem;
-            color: #dcdcdc; /* Gris claro para sutileza */
-            opacity: 0.8;
-        }
+/* Créditos o texto pequeño */
+.creditos {
+    font-size: 0.85rem;
+    color: #dcdcdc; /* Gris claro para sutileza */
+    opacity: 0.8;
+}
         
         /* Estilos para la barra de redes sociales */
         .social-media {
@@ -695,12 +695,7 @@
         /* Importar fuente de Google Fonts */
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
          /* Estilos básicos del formulario de Contacto Emergente */
-        body {
-            font-family: 'Roboto', sans-serif; /* Cambiar a fuente más elegante */
-            margin: 0;
-            padding: 0;
-        }
-
+        
         .contact-popup {
             position: fixed;
             bottom: 0;
@@ -811,7 +806,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        z-index: 999;
+        z-index: 1050; /* Asegura que esté por encima del popup */
         }
 
 

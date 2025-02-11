@@ -405,19 +405,39 @@ header h3 {
             }
         }
         /* Estilos para el pie de página */
-        footer {
-            background-color: #003366;
-            color: white;
-            padding: 20px 0;
+        .footer {
+            width: 100%;
+            background: linear-gradient(135deg, #003366, #4682b4); /* Azul de Prusia combinado con Azul Acero */
+            color: #f8f8f8; /* Blanco brillante para mejor contraste */
             text-align: center;
-            margin-top: 40px;
+            padding: 30px 0;
+            box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+            border-top: 3px solid rgba(255, 255, 255, 0.15); /* Línea decorativa */
         }
-        footer p {
-            margin: 10px 0;
+
+        /* Texto del footer */
+        .footer p {
+            margin: 5px 0;
+            font-size: 1rem;
         }
-        footer img {
-            max-width: 80px;
-            margin-top: 10px;
+
+        /* Logo dentro del footer */
+        .footer-logo {
+            max-width: 100px;
+            margin: 15px 0;
+            filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3)); /* Efecto de sombra en el logo */
+        }
+
+        /* Créditos o texto pequeño */
+        .creditos {
+            font-size: 0.85rem;
+            color: #dcdcdc; /* Gris claro para sutileza */
+            opacity: 0.8;
+        }
+
+        .footer * {
+            text-align: center !important;
+            color: #ffffff; /* Blanco puro para mejor contraste */
         }
         /* Estilos para la barra de redes sociales */
         .social-media {
@@ -887,8 +907,7 @@ p {
     <button class="tablink" onclick="openTab(event, 'Descripcion')" id="defaultOpen">Descripción</button>
     <button class="tablink" onclick="openTab(event, 'InformacionAdicional')">Información adicional</button>
     <button class="tablink" onclick="openTab(event, 'FichaTecnica')">Ficha Técnica</button>
-    <button class="tablink" onclick="openTab(event, 'Requisitos')">Requisitos de admisión</button>
- 
+    <button class="tablink" onclick="openTab(event, 'Requisitos')">Requisitos de admisión</button> 
      
 </section>
 
@@ -994,6 +1013,14 @@ p {
         </div>
     </div>
 </section>
+
+<footer class="footer">
+    <p>&copy; 2025 Centro de Estudios Suramericano. Todos los derechos reservados.</p>
+    <p>Dirección: Barrio El Cedro, Cra 22 n 16-20, Sibundoy, Putumayo, Colombia</p>
+    <img src="Imagenes/logo.png" alt="Logo Footer" class="footer-logo">
+    <p class="creditos">Desarrollado por Centro de Estudios Suramericano</p>
+</footer>
+
 <script>
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
